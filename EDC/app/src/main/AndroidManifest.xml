@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EDC">
+        <activity android:name=".NotesActivity"></activity>
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".PainActivity" />
+        <activity android:name=".DiseasesActivity" />
+        <activity android:name=".MeasurementActivity" />
+        <activity android:name=".UserInterfaceActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
