@@ -6,10 +6,107 @@
     android:layout_height="match_parent"
     tools:context=".MeasurementActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pomiary"
-        android:layout_centerInParent="true"/>
 
-</RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtMeasurement"
+                    android:text="Pomiary"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/menu_measurement"
+                    >
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnSugar"
+                    android:text="Cukier"
+                    android:layout_marginTop="50dp"
+                    />
+
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnTemperature"
+                    android:text="Temperatura"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/btnSugar"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnBlood_pressure"
+                    android:text="Cisnienie"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/btnTemperature"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnBlood_oxygenation"
+                    android:text="Natlenienie krwi"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/btnBlood_pressure"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnFettle"
+                    android:text="Samopoczucie"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/btnBlood_oxygenation"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnWeight"
+                    android:text="Waga"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/btnFettle"
+                    />
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>

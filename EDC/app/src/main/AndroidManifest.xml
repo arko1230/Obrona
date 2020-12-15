@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EDC">
-        <activity android:name=".NotesActivity"></activity>
+        <activity android:name=".DrugsActivity"></activity>
+        <activity android:name=".NotesActivity" />
         <activity android:name=".HistoryActivity" />
         <activity android:name=".PainActivity" />
         <activity android:name=".DiseasesActivity" />

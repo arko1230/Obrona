@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnHistory,btnNotes ;
+    private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnHistory,btnNotes, btnDrugs ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        btnDrugs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DrugsActivity.class );
+                startActivity(intent);
+            }
+        });
+
+
         btnHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
 
@@ -89,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         btnPains = (Button) findViewById(R.id.btnPains);
         btnHistory = (Button) findViewById(R.id.btnHistory);
         btnNotes = (Button) findViewById(R.id.btnNotes);
+        btnDrugs = (Button) findViewById(R.id.btnDrugs);
 
     }
 

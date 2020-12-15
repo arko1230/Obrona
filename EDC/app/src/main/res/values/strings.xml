@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">EDC</string>
+    <string name="Treatments">Zabiegi</string>
+    <string name="doctors">Lekarze</string>
+    <string name="bad_drugs">Używki</string>
+    <string name="pains">Bóle</string>
+    <string name="visits">Wizyty</string>
+    <string name="drugs">Leki</string>
+    <string name="history">Historia</string>
+    <string name="taking_drugs">Brane</string>
+    <string name="create_report">Twórz raport</string>
+    <string name="note_list">Lista notatek</string>
 </resources>

@@ -6,11 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".DiseasesActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Choroby"/>
-    
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/appName"
+                android:text="Choroby"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/menu_diseaes"
+                android:layout_below="@+id/appName">
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnFamily_diseases"
+                    android:text="Przewlekłe w rodzinie"
+                    android:layout_marginTop="20dp"
+                    />
+
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnMedical_history"
+                    android:text="Przebyte"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/btnFamily_diseases"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnDiseases"
+                    android:text="Choroby"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/btnMedical_history"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/btnCurrent"
+                    android:text="Obecnie"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/btnDiseases"
+                    />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+
+
 
 </RelativeLayout>

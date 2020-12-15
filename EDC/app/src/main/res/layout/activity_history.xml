@@ -7,11 +7,102 @@
     tools:context=".HistoryActivity">
 
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Historia"/>
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtHistory"
+            android:text="Historia"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/menu_History"
+            android:layout_below="@+id/appName">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnVisits"
+                android:text="@string/visits"
+                android:layout_marginTop="50dp"
+                />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnBad_drugs"
+                android:text="@string/bad_drugs"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnVisits"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnDoctors"
+                android:text="@string/doctors"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnBad_drugs"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnTreatments"
+                android:text="@string/Treatments"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnDoctors"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnCurrent"
+                android:text="@string/Treatments"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnTreatments"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnPains"
+                android:text="@string/pains"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnTreatments"
+                />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
 
 
 </RelativeLayout>

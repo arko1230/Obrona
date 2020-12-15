@@ -75,6 +75,18 @@
                 android:layout_below="@+id/btnDiseases"
                 />
 
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnDrugs"
+                android:text="Leki"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnPains"
+                />
+
             <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,7 +95,7 @@
             android:id="@+id/btnHistory"
             android:text="Historia"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/btnPains"
+            android:layout_below="@+id/btnDrugs"
             />
 
             <Button
