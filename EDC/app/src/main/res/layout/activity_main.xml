@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/appName"
+            android:text="Elektroniczny Dziennik Chorego"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/menu"
+            android:layout_below="@+id/appName">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnUser"
+                android:text="Użytkownik"
+                android:layout_marginTop="20dp"
+                />
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnMeasurement"
+                android:text="Pomiary"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnUser"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnDiseases"
+                android:text="Choroby"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnMeasurement"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnPains"
+                android:text="Bóle"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnDiseases"
+                />
+
+            <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/btnHistory"
+            android:text="Historia"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/btnPains"
+            />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/btnNotes"
+                android:text="Notatki"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/btnHistory"
+                />
+
+
+
+
+           </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
