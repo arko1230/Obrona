@@ -4,12 +4,182 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserInterfaceActivity">
+    tools:context=".UserInterfaceActivity"
+    >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/txtUserHome"
+        android:text="Użytkownik"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="User interface"/>
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/txtUserHome">
+
+        <EditText
+            android:id="@+id/e_txtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="@string/user_name_hint"
+            />
+
+
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="60dp"
+            android:id="@+id/txtBlodChoose"
+            android:layout_below="@+id/e_txtUserName"
+            android:text="Podaj swoją grupę krwi"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:id="@+id/layout_bloodchoose"
+            android:layout_below="@id/txtBlodChoose"
+            >
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_toRightOf="@+id/rbtnMale"
+                android:layout_centerVertical="true"
+                android:text="Mężczyzna"
+                android:id="@+id/txtMale"
+                android:layout_above="@+id/txtFemale"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+
+                />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:text="Kobieta"
+                android:id="@+id/txtFemale"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/rbtnFmale"
+                android:layout_centerVertical="true"
+                />
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:text="Żadna"
+                android:id="@+id/txtNon"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/rbtnNon"
+                android:layout_below="@+id/txtFemale"
+                android:layout_marginTop="30dp"
+                />
+
+
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="60dp"
+            android:id="@+id/txtGenderChoose"
+            android:layout_centerVertical="true"
+            android:text="Podaj płeć"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            />
+
+
+            <RadioButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="20dp"
+                android:layout_above="@+id/rbtnFmale"
+                android:layout_toRightOf="@+id/txtGenderChoose"
+               android:id="@+id/rbtnMale"
+            />
+
+
+            <RadioButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@+id/txtGenderChoose"
+                android:layout_centerVertical="true"
+                android:id="@+id/rbtnFmale"
+                />
+
+            <RadioButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/txtGenderChoose"
+                android:layout_below="@+id/rbtnFmale"
+                android:id="@+id/rbtnNon"
+                />
+
+
+        </RelativeLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/btnAllergens"
+            android:layout_below="@id/layout_bloodchoose"
+            android:text="@string/allergens"
+            android:layout_marginTop="20dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/btnICE"
+            android:layout_below="@id/btnAllergens"
+            android:text="@string/ICE_card"
+            android:layout_marginTop="20dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnICE"
+            android:padding="500dp">
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="20dp"
+                android:text="USUN DANE"
+                app:backgroundTint="@android:color/holo_red_light" />
+         </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
 
 </RelativeLayout>
