@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "924086216158",
+    "project_id": "edc-project-d3ffa",
+    "storage_bucket": "edc-project-d3ffa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924086216158:android:36c0e33c6ec3cb6d8ca94f",
+        "android_client_info": {
+          "package_name": "com.arko.edc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924086216158-lnfbgnvu89qgsb0hr2622urt34am8uh3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC4bINwX2KQPkf9A4Fth93eR4bO300Nq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924086216158-lnfbgnvu89qgsb0hr2622urt34am8uh3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
