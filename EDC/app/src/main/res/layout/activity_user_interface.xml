@@ -30,10 +30,10 @@
             android:id="@+id/e_txtUserName"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:hint="@string/user_name_hint"
+
             />
 
 
@@ -173,6 +173,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="60dp"
                 android:layout_marginRight="20dp"
+                android:onClick="proces"
                 android:text="USUN DANE"
                 app:backgroundTint="@android:color/holo_red_light" />
          </RelativeLayout>
