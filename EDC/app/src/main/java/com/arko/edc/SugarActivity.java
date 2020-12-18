@@ -20,6 +20,8 @@ public class SugarActivity extends AppCompatActivity {
         rcvSugar.setLayoutManager(new LinearLayoutManager(this));
 
 
+        //ZMIANA WIDOKU USUNAC PRZYCISK USUN DANE
+
         String arr[]={"c++","c","java","php","c++","c","java","php","c++","c","java","php","c++","c","java","c++","c","java","php","c++","c","java",};
         rcvSugar.setAdapter(new MySugarAdapter(arr));
 

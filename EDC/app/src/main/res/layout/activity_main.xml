@@ -5,6 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtUserName"
+            android:text="Nazwa użutkownika"
+            android:layout_marginTop="30dp"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imgViewUser"
+            android:layout_below="@+id/txtUserName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            />
+
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLogout"
+            android:text="Wyloguj"
+            android:layout_toRightOf="@+id/imgViewUser"
+            android:layout_below="@+id/txtUserName"
+            android:layout_margin="10dp"
+
+            />
+
+
+
+
+
+    </RelativeLayout>
+
 
 
     <RelativeLayout
@@ -117,6 +158,17 @@
 
     </RelativeLayout>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email@dlugiiiiiiiii"
+        android:textSize="18sp"
+        android:id="@+id/txtUserEmail"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        />
 
 
 </RelativeLayout>

@@ -33,7 +33,7 @@ public class UserInterfaceActivity extends AppCompatActivity {
 //
 //    }
 
-
+//USUNAC PRZYCISK WYSYLALNIA DO BAZY
 
     public void proces(View view){
 
@@ -45,6 +45,8 @@ public class UserInterfaceActivity extends AppCompatActivity {
         root.setValue(e_txtUserName.getText().toString());
         e_txtUserName.setText(" ");
         Toast.makeText(getApplicationContext(),"Inserted",Toast.LENGTH_LONG).show();
+
+
 
 
     }

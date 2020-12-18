@@ -6,17 +6,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.arko.edc.ui.login.LoginViewModel;
-
-import java.util.ArrayList;
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnHistory,btnNotes, btnDrugs ;
+    private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnHistory,btnNotes, btnDrugs, btnLogout ;
+    private ImageView imgLogUser = (ImageView) findViewById(R.id.imgViewUser);
+    private TextView txtUserName, txtUserEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +30,34 @@ public class MainActivity extends AppCompatActivity {
         initWidgets();
         setOnCilickListeners();
 
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        txtUserName.setText(account.getDisplayName());
+        txtUserEmail.setText(account.getEmail());
+
+        Glide.with(this).load(account.getPhotoUrl()).into(imgLogUser);
+
 
     }
 
+
+
+
+
+
     private void setOnCilickListeners(){
+
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                finish();
+            }
+        });
+
+
+
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
         btnMeasurement.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initWidgets(){
 
+        imgLogUser = (ImageView) findViewById(R.id.imgViewUser);
+        txtUserEmail = (TextView) findViewById(R.id.txtUserEmail);
+        txtUserName = (TextView) findViewById(R.id.txtUserName);
+
+        btnLogout = (Button) findViewById(R.id.btnLogout);
         btnUser = (Button) findViewById(R.id.btnUser);
         btnMeasurement = (Button) findViewById(R.id.btnMeasurement);
         btnDiseases = (Button) findViewById(R.id.btnDiseases);
@@ -104,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
         btnHistory = (Button) findViewById(R.id.btnHistory);
         btnNotes = (Button) findViewById(R.id.btnNotes);
         btnDrugs = (Button) findViewById(R.id.btnDrugs);
+
 
     }
 
