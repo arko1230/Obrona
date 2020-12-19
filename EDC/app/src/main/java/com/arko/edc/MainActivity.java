@@ -18,30 +18,26 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnHistory,btnNotes, btnDrugs, btnLogout ;
-    private ImageView imgLogUser = (ImageView) findViewById(R.id.imgViewUser);
+    private ImageView imgLogUser;
     private TextView txtUserName, txtUserEmail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         setContentView(R.layout.activity_main);
-
-
         initWidgets();
         setOnCilickListeners();
 
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
         txtUserName.setText(account.getDisplayName());
         txtUserEmail.setText(account.getEmail());
-
-        Glide.with(this).load(account.getPhotoUrl()).into(imgLogUser);
+       Glide.with(this).load(account.getPhotoUrl()).into(imgLogUser);
 
 
     }
-
-
-
-
 
 
     private void setOnCilickListeners(){
@@ -126,10 +122,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void initWidgets(){
 
-        imgLogUser = (ImageView) findViewById(R.id.imgViewUser);
+        //imgLogUser = (ImageView) findViewById(R.id.imgViewUser);
         txtUserEmail = (TextView) findViewById(R.id.txtUserEmail);
         txtUserName = (TextView) findViewById(R.id.txtUserName);
-
+        imgLogUser = (ImageView) findViewById(R.id.imgViewUser);
         btnLogout = (Button) findViewById(R.id.btnLogout);
         btnUser = (Button) findViewById(R.id.btnUser);
         btnMeasurement = (Button) findViewById(R.id.btnMeasurement);
@@ -139,6 +135,11 @@ public class MainActivity extends AppCompatActivity {
         btnNotes = (Button) findViewById(R.id.btnNotes);
         btnDrugs = (Button) findViewById(R.id.btnDrugs);
 
+
+    }
+
+
+    private void getPhoto(){
 
     }
 

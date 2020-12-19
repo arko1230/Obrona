@@ -13,9 +13,6 @@
         android:theme="@style/Theme.EDC">
         <activity android:name=".SugarActivity" />
         <activity android:name=".SugarRecyclerView" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
         <activity android:name=".DrugsActivity" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".NotesActivity" />

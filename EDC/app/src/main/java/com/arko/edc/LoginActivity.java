@@ -25,6 +25,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private static final String TAG ="ERROR" ;
     SignInButton btnS;
     GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
@@ -73,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void processLogin() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, 100);
+        startActivityForResult(signInIntent, 103);
 
     }
 
@@ -81,16 +82,16 @@ public class LoginActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == 100) {
+        if (requestCode == 103) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-               // Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
+               Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
-                // Log.w(TAG, "Google sign in failed", e);
+                Log.w(TAG, "Google sign in failed", e);
                 // ...
                 Toast.makeText(getApplicationContext(),"Błąd podczas logowania do Google",Toast.LENGTH_LONG).show();
 
