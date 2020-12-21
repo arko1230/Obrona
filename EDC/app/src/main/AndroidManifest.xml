@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arko.edc">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,17 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EDC">
+
         <activity android:name=".SugarActivity" />
         <activity android:name=".SugarRecyclerView" />
         <activity android:name=".DrugsActivity" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".NotesActivity" />
         <activity android:name=".HistoryActivity" />
         <activity android:name=".PainActivity" />
         <activity android:name=".DiseasesActivity" />
         <activity android:name=".MeasurementActivity" />
+        <activity android:name=".AddSugarData" />
         <activity android:name=".UserInterfaceActivity" />
-
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

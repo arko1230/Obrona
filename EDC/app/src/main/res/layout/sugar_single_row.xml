@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="200dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -15,11 +20,11 @@
         android:id="@+id/about_date_s"
         android:textStyle="bold"
         android:background="@color/cardview_shadow_start_color"
-        android:text="Data" />
+        android:text="@string/data" />
 
         <TextView
             android:layout_width="110dp"
-            android:layout_height="50dp"
+            android:layout_height="150dp"
             android:layout_below="@+id/about_date_s"
             android:id="@+id/sugar_date_stamp"
             android:padding="3dp"
@@ -35,7 +40,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Pomiar w mg/dL"
+            android:text="@string/about_result_s"
             android:id="@+id/about_result_s"
             android:gravity="center"
             android:textStyle="bold"
@@ -43,7 +48,7 @@
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="150dp"
             android:layout_below="@id/about_result_s"
             android:id="@+id/sugar_result"
             android:gravity="center"
@@ -57,23 +62,40 @@
         >
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:text="Opis:"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="@string/about"
             android:id="@+id/about_s"
             android:gravity="center"
             android:textStyle="bold"
             android:background="@color/cardview_shadow_start_color"
             />
 
+        <Button
+            android:id="@+id/btnDeleteSugar"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="@color/design_default_color_error"
+            app:backgroundTint="@color/design_default_color_error"
+            app:icon="@android:drawable/ic_menu_close_clear_cancel"
+            app:iconPadding="0dp"
+            app:iconTintMode="multiply" />
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="150dp"
             android:text="Demoo"
             android:id="@+id/sugar_about"
             android:layout_below="@id/about_s"
             android:padding="3dp"
             />
 
+
+
+
     </RelativeLayout>
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

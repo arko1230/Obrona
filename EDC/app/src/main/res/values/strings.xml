@@ -22,4 +22,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="allergens">Alergeny</string>
     <string name="ICE_card">Karta I.C.E.</string>
+    <string name="about_result_s">Pomiar w mg/dL</string>
+    <string name="data">Data</string>
+    <string name="about">Opis:</string>
 </resources>

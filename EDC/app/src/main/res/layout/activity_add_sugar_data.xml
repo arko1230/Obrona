@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddSugarData">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rl1"
+    android:layout_marginTop="20dp"
+    >
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtresult"
+        android:text="@string/about_result_s"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:id="@+id/result_etxt_s"
+        android:layout_below="@+id/txtresult"
+        android:layout_centerHorizontal="true"
+
+        />
+
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl2"
+        android:layout_below="@+id/rl1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sug_about"
+        android:text="@string/about"
+        android:layout_marginBottom="10dp"
+       android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <EditText
+        android:id="@+id/e_txtabout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/sug_about"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentTop="true"
+        />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl3"
+        android:layout_below="@+id/rl2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_aboutdate_measure"
+            android:text="Wybierz date pomiaru"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_datepicker"
+            android:layout_below="@+id/txt_aboutdate_measure"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Data"
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wybrano date: "
+            android:id="@+id/txt_datechose"
+            android:layout_below="@+id/btn_datepicker"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+
+            />
+
+
+
+    </RelativeLayout>
+</RelativeLayout>
