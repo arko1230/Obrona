@@ -33,8 +33,13 @@
         android:id="@+id/result_etxt_s"
         android:layout_below="@+id/txtresult"
         android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+
 
         />
+
+
 
 </RelativeLayout>
     <RelativeLayout
@@ -61,28 +66,30 @@
         android:layout_below="@id/sug_about"
         android:layout_marginTop="80dp"
         android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="30dp"
         />
 
     </RelativeLayout>
+
     <RelativeLayout
+        android:id="@+id/rl3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rl3"
-        android:layout_below="@+id/rl2">
+        android:layout_below="@+id/rl2"
+        android:layout_marginTop="72dp">
 
         <TextView
+            android:id="@+id/txt_aboutdate_measure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_aboutdate_measure"
-            android:text="Wybierz date pomiaru"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            />
+            android:text="Wybierz date pomiaru" />
 
         <Button
+            android:id="@+id/btn_datepicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_datepicker"
             android:layout_below="@+id/txt_aboutdate_measure"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
@@ -92,17 +99,35 @@
 
 
         <TextView
+            android:id="@+id/txt_datechose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wybrano date: "
-            android:id="@+id/txt_datechose"
             android:layout_below="@+id/btn_datepicker"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
+            android:text="Wybrano date: "
 
             />
 
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl3"
+        android:layout_marginTop="-1dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/send"
+            android:text="Zatwierdz" />
+
 
     </RelativeLayout>
+
+
 </RelativeLayout>

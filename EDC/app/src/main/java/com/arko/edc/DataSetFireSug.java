@@ -1,18 +1,13 @@
 package com.arko.edc;
 
-public class SugarModel {
+public class DataSetFireSug {
+    String aboutSugar, date, sugarResult;
 
-    String date, sugarResult, aboutSugar;
-
-    SugarModel(){
-
-
+    public String getAboutSugar() {
+        return aboutSugar;
     }
 
-
-    public SugarModel(String date, String sugarResult, String aboutSugar) {
-        this.date = date;
-        this.sugarResult = sugarResult;
+    public void setAboutSugar(String aboutSugar) {
         this.aboutSugar = aboutSugar;
     }
 
@@ -32,11 +27,13 @@ public class SugarModel {
         this.sugarResult = sugarResult;
     }
 
-    public String getAboutSugar() {
-        return aboutSugar;
+    public DataSetFireSug() {
     }
 
-    public void setAboutSugar(String aboutSugar) {
+    public DataSetFireSug(String aboutSugar, String date, String sugarResult) {
         this.aboutSugar = aboutSugar;
+        this.date = date;
+        this.sugarResult = sugarResult;
     }
+
 }

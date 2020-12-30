@@ -4,25 +4,48 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.telecom.TelecomManager;
+import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+
 
 import java.util.Calendar;
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+
 
 public class AddSugarData extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private TextView txt_datechose;
 
+    private EditText etxtResult, etxtSugAbout;
+    private FirebaseAuth mAuth;
+
+    private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_add_sugar_data);
 
         txt_datechose = findViewById(R.id.txt_datechose);
+        etxtSugAbout = findViewById(R.id.e_txtabout);
+        etxtResult = findViewById(R.id.result_etxt_s);
+//        send = findViewById(R.id.send);
 
         findViewById(R.id.btn_datepicker).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +54,16 @@ public class AddSugarData extends AppCompatActivity implements DatePickerDialog.
             }
         });
 
+      findViewById(R.id.send).setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+                sendValue();
+
+          }
+      });
+
     }
+
 
 
     private void showDatePickerDialog(){
@@ -48,7 +80,42 @@ public class AddSugarData extends AppCompatActivity implements DatePickerDialog.
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            String date = "dzień/miesiąc/rok: " + (dayOfMonth) + " " + (month+1) + " " + year;
+            String date = (dayOfMonth) + "." + (month+1) + "." + year;
             txt_datechose.setText(date);
     }
+
+
+
+    public void sendValue(){
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null){
+
+            String uid = user.getUid();
+
+            DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Sugar").child("Record");
+
+
+
+              String sugarResult = etxtResult.getText().toString();
+              String aboutSugar =etxtSugAbout.getText().toString();
+              String date = txt_datechose.getText().toString();
+
+              Map newRec = new HashMap();
+              newRec.put("sugarResult",sugarResult);
+              newRec.put("aboutSugar",aboutSugar);
+              newRec.put("date",date);
+              current_user_db.push().setValue(newRec);
+              finish();
+
+    }
+
+
+
+    }
+
+
+
+
 }

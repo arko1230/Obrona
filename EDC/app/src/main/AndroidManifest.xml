@@ -14,7 +14,6 @@
         android:theme="@style/Theme.EDC">
 
         <activity android:name=".SugarActivity" />
-        <activity android:name=".SugarRecyclerView" />
         <activity android:name=".DrugsActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".NotesActivity" />

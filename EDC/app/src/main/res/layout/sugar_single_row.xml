@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -26,8 +26,9 @@
             android:layout_width="110dp"
             android:layout_height="150dp"
             android:layout_below="@+id/about_date_s"
-            android:id="@+id/sugar_date_stamp"
+            android:id="@+id/date"
             android:padding="3dp"
+            android:gravity="center"
 
            />
 
@@ -50,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_below="@id/about_result_s"
-            android:id="@+id/sugar_result"
+            android:id="@+id/sugarResult"
             android:gravity="center"
             android:padding="3dp"
             />
@@ -62,7 +63,7 @@
         >
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="@string/about"
             android:id="@+id/about_s"
@@ -71,24 +72,14 @@
             android:background="@color/cardview_shadow_start_color"
             />
 
-        <Button
-            android:id="@+id/btnDeleteSugar"
-            android:layout_width="30dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:background="@color/design_default_color_error"
-            app:backgroundTint="@color/design_default_color_error"
-            app:icon="@android:drawable/ic_menu_close_clear_cancel"
-            app:iconPadding="0dp"
-            app:iconTintMode="multiply" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:text="Demoo"
-            android:id="@+id/sugar_about"
+            android:id="@+id/aboutSugar"
             android:layout_below="@id/about_s"
             android:padding="3dp"
+            android:gravity="center"
             />
 
 

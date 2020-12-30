@@ -6,14 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".SugarActivity">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/RecyclerViewSugar">
+        android:id="@+id/recycle_view"/>
 
-
-
-    </androidx.recyclerview.widget.RecyclerView>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -28,7 +26,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.924"
         app:srcCompat="@drawable/ic_baseline_add_circle_24"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="40dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
