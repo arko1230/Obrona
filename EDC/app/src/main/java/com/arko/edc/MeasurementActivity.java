@@ -30,6 +30,15 @@ public class MeasurementActivity extends AppCompatActivity {
         });
 
 
+        btnTemperature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeasurementActivity.this, TemperatureActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         //TODO do all of measurement buttons and views
         //TODO add recyclerview for all
 

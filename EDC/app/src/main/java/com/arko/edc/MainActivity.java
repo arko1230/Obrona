@@ -2,6 +2,7 @@ package com.arko.edc;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +12,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnHistory,btnNotes, btnDrugs, btnLogout ;
     private ImageView imgLogUser;
     private TextView txtUserName, txtUserEmail;
+
+
 
 
     @Override
@@ -35,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        txtUserName.setText(account.getDisplayName());
+
         txtUserEmail.setText(account.getEmail());
        Glide.with(this).load(account.getPhotoUrl()).into(imgLogUser);
 

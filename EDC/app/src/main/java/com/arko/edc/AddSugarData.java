@@ -45,7 +45,7 @@ public class AddSugarData extends AppCompatActivity implements DatePickerDialog.
         txt_datechose = findViewById(R.id.txt_datechose);
         etxtSugAbout = findViewById(R.id.e_txtabout);
         etxtResult = findViewById(R.id.result_etxt_s);
-//        send = findViewById(R.id.send);
+
 
         findViewById(R.id.btn_datepicker).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +66,7 @@ public class AddSugarData extends AppCompatActivity implements DatePickerDialog.
 
 
 
-    private void showDatePickerDialog(){
+   public void showDatePickerDialog(){
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
@@ -94,7 +94,7 @@ public class AddSugarData extends AppCompatActivity implements DatePickerDialog.
 
             String uid = user.getUid();
 
-            DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Sugar").child("Record");
+            DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Sugar");
 
 
 
@@ -109,8 +109,8 @@ public class AddSugarData extends AppCompatActivity implements DatePickerDialog.
               current_user_db.push().setValue(newRec);
               finish();
 
-    }
-
+            }
+        else finish();
 
 
     }

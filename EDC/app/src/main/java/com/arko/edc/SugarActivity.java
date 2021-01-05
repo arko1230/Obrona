@@ -2,26 +2,42 @@ package com.arko.edc;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
-public class SugarActivity extends AppCompatActivity {
+public class SugarActivity extends AppCompatActivity implements DatePicker.OnDateChangedListener {
 
     private RecyclerView mRecyclerView;
     private ArrayList<DataSetFireSug> mArrayList;
@@ -29,6 +45,7 @@ public class SugarActivity extends AppCompatActivity {
     private FirebaseRecyclerAdapter<DataSetFireSug,FirebaseViewSugarHolder> mAdapter;
     private DatabaseReference mDatabaseReference;
     private FirebaseUser mUser;
+
 
     @Override
     protected void onStart() {
@@ -65,7 +82,7 @@ public class SugarActivity extends AppCompatActivity {
 
         mArrayList = new ArrayList<DataSetFireSug>();
 
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Sugar").child("Record");
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Sugar");
         mDatabaseReference.keepSynced(true);
         mOptions = new FirebaseRecyclerOptions.Builder<DataSetFireSug>().setQuery(mDatabaseReference,DataSetFireSug.class).build();
 
@@ -75,9 +92,116 @@ public class SugarActivity extends AppCompatActivity {
                 holder.aboutSugar.setText(model.getAboutSugar());
                 holder.date.setText(model.getDate());
                 holder.sugarResult.setText(model.getSugarResult());
+                holder.btn_edit_sugar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                     //TODO continue DialogPlus edit holder zakonczyc edycje i usuwanie wpisow
+                          final DialogPlus dialogPlus=DialogPlus.newDialog(holder.btn_edit_sugar.getContext())
+                                  .setContentHolder(new ViewHolder(R.layout.dialog_sugar_content))
+                                  .setExpanded(true,1000)
+                                  .create();
+
+
+                          View mnewView = dialogPlus.getHolderView();
+                          EditText aboutSugar = mnewView.findViewById(R.id.etxt_aboutSugar);
+                          EditText sugarResult = mnewView.findViewById(R.id.etxt_sugarResult);
+                          TextView date = mnewView.findViewById(R.id.txt_date);
+                          Button submit =mnewView.findViewById(R.id.btn_updateSugar);
+                          Button btn_editDate = mnewView.findViewById(R.id.btn_editDate);
+
+                          aboutSugar.setText(model.getAboutSugar());
+                          sugarResult.setText(model.getSugarResult());
+                          date.setText(model.getDate());
+
+
+                        dialogPlus.show();
+
+                        submit.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Map<String,Object> map = new HashMap<>();
+                                map.put("aboutSugar",aboutSugar.getText().toString());
+//TODO
+//                                map.put("date",dataEnd);
+                                map.put("sugarResult",sugarResult.getText().toString());
+
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Sugar").child(getRef(position).getKey()).updateChildren(map)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                dialogPlus.dismiss();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+
+                                            }
+                                        });
+                            }
+                        });
+
+                        btn_editDate.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+
+                                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                                        mnewView.getContext(),
+                                        holder,
+                                        Calendar.getInstance().get(Calendar.YEAR),
+                                        Calendar.getInstance().get(Calendar.MONTH),
+                                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+                                );
+
+
+                                datePickerDialog.show();
+
+//                                      @Override
+//                                        public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+//                                            String date1 = (dayOfMonth) + "." + (monthOfYear+1) + "." + year;
+//                                            dataEnd = date1;
+//                                        }
+
+                            }
+
+                        });
+
+                    }
+
+
+
+                });
+
+
+                holder.btn_del_sugar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.btn_del_sugar.getContext());
+                        builder.setTitle("Usuwanie wpisu z histori");
+                        builder.setMessage("Usunąc wpis?");
+
+                        builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Sugar").child(getRef(position).getKey()).removeValue();
+                            }
+                        });
+
+                        builder.setNegativeButton("NIE", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+                        builder.show();
+
+                    }
+                });
 
 
             }
+
 
             @NonNull
             @Override
@@ -89,7 +213,21 @@ public class SugarActivity extends AppCompatActivity {
 
         mRecyclerView.setAdapter(mAdapter);
 
+
+
+
     }
 
 
+
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
+    public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+        //TODO zapis do bazy Daty
+    }
 }

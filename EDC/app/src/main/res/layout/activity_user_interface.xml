@@ -37,23 +37,25 @@
             />
 
 
-        <TextView
+        <EditText
             android:layout_width="190dp"
             android:layout_height="60dp"
-            android:id="@+id/txtBlodChoose"
+            android:id="@+id/e_txtBlodChoose"
             android:layout_below="@+id/e_txtUserName"
-            android:text="Podaj swoją grupę krwi"
+            android:hint="Podaj swoją grupę krwi"
             android:gravity="center"
             android:textSize="15sp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
             />
 
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:id="@+id/layout_bloodchoose"
-            android:layout_below="@id/txtBlodChoose"
+            android:layout_below="@id/e_txtBlodChoose"
             >
 
 
@@ -159,24 +161,40 @@
             android:layout_marginTop="20dp"
             />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnICE"
-            android:padding="500dp">
 
-            <Button
-                android:id="@+id/btnDelete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="60dp"
-                android:layout_marginRight="20dp"
-                android:onClick="proces"
-                android:text="USUN DANE"
-                app:backgroundTint="@android:color/holo_red_light" />
-         </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@+id/btnICE"
+                android:layout_centerInParent="true">
+
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_gravity="end"
+                    android:onClick="proces"
+                    android:text="USUN DANE"
+                    app:backgroundTint="@android:color/holo_red_light" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSave"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="20dp"
+                    android:nextFocusRight="@id/btnDelete"
+                    android:text="Zatwierdz zmiany" />
+
+            </LinearLayout>
+
+
 
 
 
