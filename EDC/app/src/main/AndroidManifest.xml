@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EDC">
-        <activity android:name=".TemperatureActivity"></activity>
+        <activity android:name=".AddTemperatureData"></activity>
+        <activity android:name=".TemperatureActivity" />
         <activity android:name=".SugarActivity" />
         <activity android:name=".DrugsActivity" />
         <activity android:name=".MainActivity" />
