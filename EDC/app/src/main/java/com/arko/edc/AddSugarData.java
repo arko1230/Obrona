@@ -31,9 +31,6 @@ public class AddSugarData extends AppCompatActivity implements DatePickerDialog.
     private TextView txt_datechose;
 
     private EditText etxtResult, etxtSugAbout;
-    private FirebaseAuth mAuth;
-
-    private DatabaseReference mDatabase;
 
 
     @Override

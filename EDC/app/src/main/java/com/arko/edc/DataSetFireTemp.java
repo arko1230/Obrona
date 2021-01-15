@@ -6,6 +6,7 @@ public class DataSetFireTemp {
     String temp_result;
     String temp_about;
 
+
     public DataSetFireTemp(String data, String temp_result, String temp_about) {
         this.data = data;
         this.temp_result = temp_result;

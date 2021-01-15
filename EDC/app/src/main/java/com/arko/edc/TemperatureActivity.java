@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -29,6 +31,13 @@ public class TemperatureActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperature);
+
+        Button addSugarButton = (Button) findViewById(R.id.button_add_temperature);
+        addSugarButton.setOnClickListener(v -> {
+            Intent intent = new Intent(TemperatureActivity.this, AddTemperatureData.class);
+            startActivity(intent);
+            finish();
+        });
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view_temperature);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
