@@ -19,42 +19,39 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.arko.edc.R.id.btn_datepicker_temp;
-import static com.arko.edc.R.id.txt_datechose_temp;
+import static com.arko.edc.R.id.btn_datepicker_fettl;
+import static com.arko.edc.R.id.btn_datepicker_weight;
 
-public class AddTemperatureData extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+public class AddWeightData extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private TextView txt_datechose;
 
-    private EditText  etxtResultTemp, etxtTempAbout;
+    private EditText result_etxt_weight, e_txtabout_weight ;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_temperature_data);
+        setContentView(R.layout.activity_add_weight_data);
 
+        txt_datechose = findViewById(R.id.txt_datechose_weight);
+        result_etxt_weight = findViewById(R.id.result_etxt_weight);
+        e_txtabout_weight = findViewById(R.id.e_txtabout_weight);
 
-        txt_datechose = findViewById(R.id.txt_datechose_temp);
-        etxtTempAbout = findViewById(R.id.e_txtabout_temp);
-        etxtResultTemp = findViewById(R.id.result_etxt_temp);
-
-        findViewById(btn_datepicker_temp).setOnClickListener(new View.OnClickListener() {
+        findViewById(btn_datepicker_weight).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
             }
         });
 
-        findViewById(R.id.send_temp).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.send_weight).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendValue();
-
             }
         });
-
-
-
 
     }
 
@@ -70,11 +67,15 @@ public class AddTemperatureData extends AppCompatActivity implements DatePickerD
         datePickerDialog.show();
     }
 
+
+
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         String date = (dayOfMonth) + "." + (month+1) + "." + year;
         txt_datechose.setText(date);
     }
+
+
 
     public void sendValue(){
 
@@ -84,20 +85,20 @@ public class AddTemperatureData extends AppCompatActivity implements DatePickerD
 
             String uid = user.getUid();
 
-            DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Temperature");
+            DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Weight");
 
 
-
-            String sugarResult = etxtResultTemp.getText().toString();
-            String aboutSugar =etxtTempAbout.getText().toString();
+            String weightResult = result_etxt_weight.getText().toString();
+            String weightAbout =e_txtabout_weight.getText().toString();
             String date = txt_datechose.getText().toString();
 
             Map newRec = new HashMap();
-            newRec.put("tempResult",sugarResult);
-            newRec.put("aboutTemperature",aboutSugar);
+            newRec.put("weightResult",weightResult);
+            newRec.put("weightAbout",weightAbout);
             newRec.put("date",date);
             current_user_db.push().setValue(newRec);
-            Intent intent = new Intent(AddTemperatureData.this, TemperatureActivity.class);
+
+            Intent intent = new Intent(AddWeightData.this, WeightActivity.class);
             startActivity(intent);
             finish();
 
@@ -106,7 +107,6 @@ public class AddTemperatureData extends AppCompatActivity implements DatePickerD
 
 
     }
-
 
 
 }

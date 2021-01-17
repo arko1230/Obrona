@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PainActivity">
+    tools:context=".DiseasesActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycle_view_pressure"/>
+        android:id="@+id/recycle_view_familydiaseases"/>
 
 
     <Button
-        android:id="@+id/button_add_pain"
+        android:id="@+id/button_add_family_diaseases"
         android:layout_width="261dp"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"

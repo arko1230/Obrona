@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,15 +95,14 @@
                 />
 
             <Button
+                android:id="@+id/btnDiseases"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:id="@+id/btnDiseases"
-                android:text="Choroby"
-                android:layout_marginTop="20dp"
                 android:layout_below="@+id/btnMeasurement"
-                />
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginRight="20dp"
+                android:text="Choroby" />
 
             <Button
                 android:layout_width="match_parent"
@@ -128,16 +127,6 @@
                 android:layout_below="@+id/btnPains"
                 />
 
-            <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/btnHistory"
-            android:text="Historia"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/btnDrugs"
-            />
 
             <Button
                 android:layout_width="match_parent"
@@ -147,9 +136,19 @@
                 android:id="@+id/btnNotes"
                 android:text="Notatki"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/btnHistory"
+                android:layout_below="@+id/btnPains"
                 />
 
+            <Button
+                android:id="@+id/btnExit"
+                android:layout_width="140dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/btnNotes"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:text="Wyjscie"
+                app:backgroundTint="#C10000" />
 
 
 

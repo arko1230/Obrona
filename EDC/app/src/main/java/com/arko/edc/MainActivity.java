@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnHistory,btnNotes, btnDrugs, btnLogout ;
+    private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnExit,btnNotes, btnDrugs, btnLogout ;
     private ImageView imgLogUser;
     private TextView txtUserName, txtUserEmail;
 
@@ -111,11 +111,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        btnHistory.setOnClickListener(new View.OnClickListener() {
+        btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HistoryActivity.class );
+              //  android.os.Process.killProcess(android.os.Process.myPid());
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class );
                 startActivity(intent);
+                System.exit(0);
+
             }
         });
 
@@ -127,7 +130,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        btnNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NotesActivity.class );
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -143,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         btnMeasurement = (Button) findViewById(R.id.btnMeasurement);
         btnDiseases = (Button) findViewById(R.id.btnDiseases);
         btnPains = (Button) findViewById(R.id.btnPains);
-        btnHistory = (Button) findViewById(R.id.btnHistory);
+        btnExit = (Button) findViewById(R.id.btnExit);
         btnNotes = (Button) findViewById(R.id.btnNotes);
         btnDrugs = (Button) findViewById(R.id.btnDrugs);
 

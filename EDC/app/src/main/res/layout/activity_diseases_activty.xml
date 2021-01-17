@@ -41,18 +41,6 @@
                     />
 
 
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:id="@+id/btnMedical_history"
-                    android:text="Przebyte"
-                    android:layout_marginTop="20dp"
-                    android:layout_below="@+id/btnFamily_diseases"
-                    />
-
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -61,18 +49,7 @@
                     android:id="@+id/btnDiseases"
                     android:text="Choroby"
                     android:layout_marginTop="20dp"
-                    android:layout_below="@+id/btnMedical_history"
-                    />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:id="@+id/btnCurrent"
-                    android:text="Obecnie"
-                    android:layout_marginTop="20dp"
-                    android:layout_below="@+id/btnDiseases"
+                    android:layout_below="@+id/btnFamily_diseases"
                     />
 
 

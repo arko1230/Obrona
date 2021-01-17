@@ -39,9 +39,38 @@ public class MeasurementActivity extends AppCompatActivity {
         });
 
 
-        //TODO do all of measurement buttons and views
-        //TODO add recyclerview for all
+        btnBlood_pressure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeasurementActivity.this, PressureActivity.class);
+                startActivity(intent);
+            }
+        });
 
+
+        btnBlood_oxygenation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeasurementActivity.this, OxygenationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnFettle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeasurementActivity.this, FettleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnWeight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeasurementActivity.this, WeightActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

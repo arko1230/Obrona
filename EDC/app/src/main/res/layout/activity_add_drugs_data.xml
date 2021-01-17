@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainDiseaseActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl1"
+        android:layout_marginTop="5dp"
+        >
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtDiseaseName"
+            android:textSize="16sp"
+            android:text="Jak się nazywa leku?"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:id="@+id/e_txtTitleDrug"
+            android:layout_below="@+id/txtDiseaseName"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="Np. Apap"
+
+            />
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+
+        android:layout_below="@+id/rl1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_Drug_dosage"
+            android:textSize="16sp"
+            android:text="Dawkowanie"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+
+            />
+
+        <EditText
+            android:id="@+id/etxt_Drug_dosage"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/txt_Drug_dosage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Np. 2 tabletki"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+        android:layout_below="@+id/rl2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_dayPart_takeDrug"
+            android:textSize="16sp"
+            android:text="Pora dnia?"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+
+            />
+
+        <EditText
+            android:id="@+id/e_txt_dayPart_takeDrug"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/txt_dayPart_takeDrug"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Np. Rano i wieczorem"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl3"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/txt_DrugAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:text="Działanie" />
+        <EditText
+            android:id="@+id/e_txt_DrugAction"
+            android:layout_width="350dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/txt_DrugAction"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Np. Leczy ból glowy, niestrawność"
+            />
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl4">
+
+        <TextView
+            android:id="@+id/txtDrugContraindications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Przeciwskazania"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/e_txtDrugContraindications"
+            android:layout_width="350dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/txtDrugContraindications"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:hint="Np. Picie alkoholu" />
+
+
+        <TextView
+            android:id="@+id/txtDrugPeriod_of_use"
+            android:layout_below="@+id/e_txtDrugContraindications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+
+            android:text="Czas zażywania"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/e_txtDrugPeriod_of_use"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/txtDrugPeriod_of_use"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="5dp"
+            android:hint="Np. Od 13.04 - 20.04" />
+
+
+
+        <Button
+            android:id="@+id/send_Drug"
+            android:layout_width="234dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/e_txtDrugPeriod_of_use"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:text="Zapisz informacje" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

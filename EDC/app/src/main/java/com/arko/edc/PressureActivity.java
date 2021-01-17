@@ -6,18 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-public class DrugsActivity extends AppCompatActivity {
+public class PressureActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drugs);
+        setContentView(R.layout.activity_pressure);
 
 
-
-        Button addDrugButton = (Button) findViewById(R.id.button_add_drugs);
-        addDrugButton.setOnClickListener(v -> {
-            Intent intent = new Intent(DrugsActivity.this, AddDrugsData.class);
+        Button addPresserButton = (Button) findViewById(R.id.button_add_pressure);
+        addPresserButton.setOnClickListener(v -> {
+            Intent intent = new Intent(PressureActivity.this, AddPressureData.class);
             startActivity(intent);
             finish();
         });

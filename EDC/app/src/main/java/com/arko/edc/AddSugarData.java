@@ -3,6 +3,7 @@ package com.arko.edc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
@@ -104,7 +105,9 @@ public class AddSugarData extends AppCompatActivity implements DatePickerDialog.
               newRec.put("aboutSugar",aboutSugar);
               newRec.put("date",date);
               current_user_db.push().setValue(newRec);
-              finish();
+            Intent intent = new Intent(AddSugarData.this, SugarActivity.class);
+            startActivity(intent);
+            finish();
 
             }
         else finish();

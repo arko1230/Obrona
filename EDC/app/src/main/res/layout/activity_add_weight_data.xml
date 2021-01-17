@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTemperatureDataData">
+    tools:context=".AddWeightData">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtresult"
-            android:text="Pomiar w stopniach celcjusza"
+            android:text="Wynik pomiaru w kg"
+            android:textSize="16sp"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
@@ -30,7 +31,7 @@
         <EditText
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:id="@+id/result_etxt_temp"
+            android:id="@+id/result_etxt_weight"
             android:layout_below="@+id/txtresult"
             android:layout_centerHorizontal="true"
             android:ems="10"
@@ -51,20 +52,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_about"
+            android:id="@+id/sug_about"
             android:text="@string/about"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
 
             />
 
         <EditText
-            android:id="@+id/e_txtabout_temp"
+            android:id="@+id/e_txtabout_weight"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:layout_below="@id/temp_about"
-            android:layout_marginTop="40dp"
+            android:layout_below="@id/sug_about"
+            android:hint="Np. U lekarza"
+            android:layout_marginTop="80dp"
             android:layout_alignParentTop="true"
             android:layout_marginHorizontal="30dp"
             />
@@ -74,9 +77,9 @@
     <RelativeLayout
         android:id="@+id/rl3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_below="@+id/rl2"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="72dp">
 
         <TextView
             android:id="@+id/txt_aboutdate_measure"
@@ -84,26 +87,25 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="10dp"
             android:text="Wybierz date pomiaru" />
 
         <Button
-            android:id="@+id/btn_datepicker_temp"
-            android:layout_width="188dp"
-            android:layout_height="62dp"
+            android:id="@+id/btn_datepicker_weight"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/txt_aboutdate_measure"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="Wybierz datę"
+            android:text="Data"
 
             />
 
 
         <TextView
-            android:id="@+id/txt_datechose_temp"
-            android:layout_width="113dp"
+            android:id="@+id/txt_datechose_weight"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_datepicker_temp"
+            android:layout_below="@+id/btn_datepicker_weight"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
             android:text="Wybrano date: "
@@ -116,16 +118,16 @@
     <RelativeLayout
         android:id="@+id/rl4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:layout_below="@id/rl3"
         android:layout_marginTop="-1dp">
 
         <Button
-            android:id="@+id/send_temp"
-            android:layout_width="234dp"
-            android:layout_height="70dp"
+            android:id="@+id/send_weight"
+            android:layout_width="256dp"
+            android:layout_height="66dp"
             android:layout_centerInParent="true"
-            android:text="Zapisz informacje" />
+            android:text="Zatwierdz" />
 
 
     </RelativeLayout>
