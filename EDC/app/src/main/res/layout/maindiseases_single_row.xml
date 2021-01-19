@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="4250dp"
+    android:layout_height="425dp"
 
     >
 
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_toRightOf="@+id/about_doctor"
-            android:id="@+id/dbFamDisease_Name"
+            android:id="@+id/dbDisease_Name"
             android:gravity="center"
 
             />
@@ -40,16 +40,16 @@
             android:id="@+id/DoctorType"
             android:layout_below="@+id/about_doctor"
             android:background="@color/cardview_shadow_start_color"
-            android:text="Występowanie"
+            android:text="Czas przechorowania"
             android:textStyle="bold"
             android:gravity="center"
             />
 
         <TextView
-            android:id="@+id/dbFamDisease_Who"
+            android:id="@+id/dbTime_disease"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_below="@+id/dbFamDisease_Name"
+            android:layout_below="@+id/dbDisease_Name"
             android:gravity="center"
             android:layout_toRightOf="@+id/DoctorType"
             app:drawableTint="#700C2E" />
@@ -61,16 +61,16 @@
             android:id="@+id/Doctorabout"
             android:layout_below="@+id/DoctorType"
             android:background="@color/cardview_shadow_start_color"
-            android:text="Przebieg"
+            android:text="Czas leczenia w ośrodku"
             android:textStyle="bold"
             android:gravity="center"
             />
 
         <TextView
-            android:id="@+id/dbFamDisease_Progres"
+            android:id="@+id/dbTimeRecovery"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_below="@+id/dbFamDisease_Who"
+            android:layout_below="@+id/dbTime_disease"
             android:gravity="center"
             android:layout_toRightOf="@+id/Doctorabout"
             app:drawableTint="#700C2E" />
@@ -81,13 +81,13 @@
             android:id="@+id/DoctorContakt"
             android:layout_below="@+id/Doctorabout"
             android:background="@color/cardview_shadow_start_color"
-            android:text="Leczenie"
+            android:text="Objawy"
             android:textStyle="bold"
             android:gravity="center"
             />
 
         <TextView
-            android:id="@+id/dbFamDisease_Drugs"
+            android:id="@+id/dbSymptoms"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_below="@+id/Doctorabout"
@@ -103,16 +103,16 @@
             android:id="@+id/MemberContakt"
             android:layout_below="@+id/DoctorContakt"
             android:background="@color/cardview_shadow_start_color"
-            android:text="Dodatkowe informacje"
+            android:text="Postępowanie"
             android:textStyle="bold"
             android:gravity="center"
             />
 
         <TextView
-            android:id="@+id/dbFamDisease_ExtraInfo"
+            android:id="@+id/dbProcedure"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_below="@+id/dbFamDisease_Drugs"
+            android:layout_below="@+id/dbSymptoms"
             android:layout_toRightOf="@+id/DoctorContakt"
             android:gravity="center"
             app:drawableTint="#700C2E" />
@@ -120,11 +120,11 @@
 
 
         <Button
-            android:id="@+id/btn_del_FamilyDisease"
+            android:id="@+id/btn_del_Disease"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="USUN WPIS"
-            android:layout_below="@+id/dbFamDisease_ExtraInfo"
+            android:layout_below="@+id/dbProcedure"
             android:layout_centerHorizontal="true"
             android:layout_margin="5dp"
 
@@ -133,7 +133,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:layout_below="@+id/btn_del_FamilyDisease"
+            android:layout_below="@+id/btn_del_Disease"
             android:background="@color/design_default_color_primary" />
 
 

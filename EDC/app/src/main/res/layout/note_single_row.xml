@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="355dp"
+
+    >
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl1">
+
+        <TextView
+            android:id="@+id/txtNoteTitle"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:background="@color/cardview_shadow_start_color"
+            android:gravity="center"
+            android:text="Tytuł notatki"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/txtNoteTitle"
+            android:id="@+id/dbNoteTitle"
+            android:gravity="center"
+
+            />
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="190dp"
+            android:id="@+id/txtAboutNote"
+            android:layout_below="@+id/txtNoteTitle"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Opis"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbAboutNote"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_below="@+id/dbNoteTitle"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/txtAboutNote"
+            app:drawableTint="#700C2E" />
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:id="@+id/txtNoteDate"
+            android:layout_below="@+id/txtAboutNote"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Data"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbNoteDate"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/dbAboutNote"
+            android:layout_marginLeft="-1dp"
+            android:gravity="center"
+            android:layout_marginTop="-1dp"
+            android:layout_toRightOf="@+id/txtNoteDate"
+            app:drawableTint="#700C2E" />
+
+
+
+
+
+
+        <Button
+            android:id="@+id/btn_del_note"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="USUN WPIS"
+            android:layout_below="@+id/txtNoteDate"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+
+            app:backgroundTint="#F44336" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/btn_del_note"
+            android:background="@color/design_default_color_primary" />
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

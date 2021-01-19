@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="4250dp"
+    android:layout_height="400dp"
 
     >
 
@@ -16,19 +16,19 @@
         android:id="@+id/rl1">
 
         <TextView
-            android:id="@+id/about_doctor"
+            android:id="@+id/txtPainPlace"
             android:layout_width="110dp"
-            android:layout_height="80dp"
+            android:layout_height="50dp"
             android:background="@color/cardview_shadow_start_color"
             android:gravity="center"
-            android:text="Nazwa choroby"
+            android:text="Miejsce bólu"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_toRightOf="@+id/about_doctor"
-            android:id="@+id/dbFamDisease_Name"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/txtPainPlace"
+            android:id="@+id/dbPainPlace"
             android:gravity="center"
 
             />
@@ -36,62 +36,62 @@
 
         <TextView
             android:layout_width="110dp"
-            android:layout_height="70dp"
-            android:id="@+id/DoctorType"
-            android:layout_below="@+id/about_doctor"
+            android:layout_height="50dp"
+            android:id="@+id/txtPain_level"
+            android:layout_below="@+id/txtPainPlace"
             android:background="@color/cardview_shadow_start_color"
-            android:text="Występowanie"
+            android:text="Siła bólu"
             android:textStyle="bold"
             android:gravity="center"
             />
 
         <TextView
-            android:id="@+id/dbFamDisease_Who"
+            android:id="@+id/dbPain_level"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_below="@+id/dbFamDisease_Name"
+            android:layout_height="50dp"
+            android:layout_below="@+id/dbPainPlace"
             android:gravity="center"
-            android:layout_toRightOf="@+id/DoctorType"
+            android:layout_toRightOf="@+id/txtPainPlace"
             app:drawableTint="#700C2E" />
 
 
         <TextView
             android:layout_width="110dp"
             android:layout_height="70dp"
-            android:id="@+id/Doctorabout"
-            android:layout_below="@+id/DoctorType"
+            android:id="@+id/txt_Pain_metod"
+            android:layout_below="@+id/txtPain_level"
             android:background="@color/cardview_shadow_start_color"
-            android:text="Przebieg"
+            android:text="W jaki sposób"
             android:textStyle="bold"
             android:gravity="center"
             />
 
         <TextView
-            android:id="@+id/dbFamDisease_Progres"
+            android:id="@+id/dbPain_metod"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_below="@+id/dbFamDisease_Who"
+            android:layout_below="@+id/dbPain_level"
             android:gravity="center"
-            android:layout_toRightOf="@+id/Doctorabout"
+            android:layout_toRightOf="@+id/txt_Pain_metod"
             app:drawableTint="#700C2E" />
 
         <TextView
             android:layout_width="110dp"
-            android:layout_height="65dp"
-            android:id="@+id/DoctorContakt"
-            android:layout_below="@+id/Doctorabout"
+            android:layout_height="50dp"
+            android:id="@+id/txt_When_Pain"
+            android:layout_below="@+id/txt_Pain_metod"
             android:background="@color/cardview_shadow_start_color"
-            android:text="Leczenie"
+            android:text="Jak często"
             android:textStyle="bold"
             android:gravity="center"
             />
 
         <TextView
-            android:id="@+id/dbFamDisease_Drugs"
+            android:id="@+id/dbWhen_Pain"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_below="@+id/Doctorabout"
-            android:layout_toRightOf="@+id/DoctorContakt"
+            android:layout_height="50dp"
+            android:layout_below="@+id/dbPain_metod"
+            android:layout_toRightOf="@+id/txt_When_Pain"
             android:gravity="center"
             app:drawableTint="#700C2E" />
 
@@ -99,32 +99,53 @@
 
         <TextView
             android:layout_width="110dp"
-            android:layout_height="65dp"
-            android:id="@+id/MemberContakt"
-            android:layout_below="@+id/DoctorContakt"
+            android:layout_height="55dp"
+            android:id="@+id/txt_When_Pain_start"
+            android:layout_below="@+id/txt_When_Pain"
             android:background="@color/cardview_shadow_start_color"
-            android:text="Dodatkowe informacje"
+            android:text="Kiedy występuje"
             android:textStyle="bold"
             android:gravity="center"
             />
 
         <TextView
-            android:id="@+id/dbFamDisease_ExtraInfo"
+            android:id="@+id/dbWhen_Pain_start"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_below="@+id/dbFamDisease_Drugs"
-            android:layout_toRightOf="@+id/DoctorContakt"
+            android:layout_height="55dp"
+            android:layout_below="@+id/dbWhen_Pain"
+            android:layout_toRightOf="@+id/txt_When_Pain_start"
             android:gravity="center"
             app:drawableTint="#700C2E" />
 
 
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="55dp"
+            android:id="@+id/txt_When_Pain_end"
+            android:layout_below="@+id/txt_When_Pain_start"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Kiedy przechodzi"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbWhen_Pain_end"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/dbWhen_Pain_start"
+            android:layout_toRightOf="@+id/txt_When_Pain_start"
+            android:gravity="center"
+            app:drawableTint="#700C2E" />
 
         <Button
-            android:id="@+id/btn_del_FamilyDisease"
+            android:id="@+id/btn_del_Pain"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="USUN WPIS"
-            android:layout_below="@+id/dbFamDisease_ExtraInfo"
+            android:layout_below="@+id/txt_When_Pain_end"
             android:layout_centerHorizontal="true"
             android:layout_margin="5dp"
 
@@ -133,7 +154,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:layout_below="@+id/btn_del_FamilyDisease"
+            android:layout_below="@+id/btn_del_Pain"
             android:background="@color/design_default_color_primary" />
 
 
