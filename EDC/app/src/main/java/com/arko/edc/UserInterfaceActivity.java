@@ -184,7 +184,7 @@ public class UserInterfaceActivity extends AppCompatActivity implements AdapterV
         btnAllergens.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserInterfaceActivity.this, AddAllergensData.class);
+                Intent intent = new Intent(UserInterfaceActivity.this, AllergensActivity.class);
                 startActivity(intent);
             }
         });
@@ -192,7 +192,7 @@ public class UserInterfaceActivity extends AppCompatActivity implements AdapterV
         btnDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserInterfaceActivity.this, AddDoctorsData.class);
+                Intent intent = new Intent(UserInterfaceActivity.this, DoctorActivity.class);
                 startActivity(intent);
             }
         });

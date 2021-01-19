@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl1">
+
+        <TextView
+            android:id="@+id/txtWeight"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:background="@color/cardview_shadow_start_color"
+            android:gravity="center"
+            android:text="Waga w KG"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/txtWeight"
+            android:id="@+id/dbWeightResult"
+            android:gravity="center"
+
+            />
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:id="@+id/txtWeightAbout"
+            android:layout_below="@+id/txtWeight"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Opis"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbWeightAbout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/dbWeightResult"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/txtWeightAbout"
+            app:drawableTint="#700C2E" />
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:id="@+id/txtWeightDate"
+            android:layout_below="@+id/txtWeightAbout"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Data"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbWeghtDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/dbWeightAbout"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/txtWeightDate"
+            app:drawableTint="#700C2E" />
+
+
+
+
+        <Button
+            android:id="@+id/btn_del_weight"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="USUN WPIS"
+            android:layout_below="@+id/dbWeghtDate"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+
+            app:backgroundTint="#F44336" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/btn_del_weight"
+            android:background="@color/design_default_color_primary" />
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

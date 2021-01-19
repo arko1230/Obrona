@@ -21,12 +21,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class OxygenationActivity extends AppCompatActivity {
-
+public class DoctorActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private FirebaseRecyclerOptions<DataSetFireSP02> mOptions;
-    private FirebaseRecyclerAdapter<DataSetFireSP02,FirebaseViewSP02Holder> mAdapter;
+    private FirebaseRecyclerOptions<DataSetFireDoctor> mOptions;
+    private FirebaseRecyclerAdapter<DataSetFireDoctor,FirebaseViewDoctorHolder> mAdapter;
     private DatabaseReference mDatabaseReference;
     private FirebaseUser mUser;
 
@@ -42,51 +41,49 @@ public class OxygenationActivity extends AppCompatActivity {
         mAdapter.stopListening();
     }
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_oxygenation);
+        setContentView(R.layout.activity_doctor);
 
-        Button addSugarButton = (Button) findViewById(R.id.button_add_oxygenation);
-        addSugarButton.setOnClickListener(v -> {
-            Intent intent = new Intent(OxygenationActivity.this, AddOxygenation.class);
+        Button addDoctorButton = (Button) findViewById(R.id.button_add_doctor);
+        addDoctorButton.setOnClickListener(v -> {
+            Intent intent = new Intent(DoctorActivity.this, AddDoctorsData.class);
             startActivity(intent);
             finish();
         });
 
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view_SP02);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view_doctor);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         String uid = mUser.getUid();
 
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Oxygen");
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Doctors");
         mDatabaseReference.keepSynced(true);
 
-        mOptions = new FirebaseRecyclerOptions.Builder<DataSetFireSP02>().setQuery(mDatabaseReference, DataSetFireSP02.class).build();
+        mOptions = new FirebaseRecyclerOptions.Builder<DataSetFireDoctor>().setQuery(mDatabaseReference, DataSetFireDoctor.class).build();
 
 
-        mAdapter = new FirebaseRecyclerAdapter<DataSetFireSP02, FirebaseViewSP02Holder>(mOptions) {
+        mAdapter = new FirebaseRecyclerAdapter<DataSetFireDoctor, FirebaseViewDoctorHolder>(mOptions) {
             @Override
-            protected void onBindViewHolder(@NonNull FirebaseViewSP02Holder holder, int position, @NonNull DataSetFireSP02 model) {
-                holder.oxygenResult.setText(model.getOxygenResult());
-                holder.aboutOxygen.setText(model.getAboutOxygen());
-                holder.date.setText(model.getDate());
+            protected void onBindViewHolder(@NonNull FirebaseViewDoctorHolder holder, int position, @NonNull DataSetFireDoctor model) {
+                holder.doctorName.setText(model.getDoctorName());
+                holder.doctorType.setText(model.getDoctorType());
+                holder.doctorAbout.setText(model.getDoctorAbout());
+                holder.doctorContakt.setText(model.getDoctorContakt());
 
-                holder.btn_del_SP02.setOnClickListener(new View.OnClickListener() {
+                holder.btn_del_doctor.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.btn_del_SP02.getContext());
+                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.btn_del_doctor.getContext());
                         builder.setTitle("Usuwanie wpisu z histori");
                         builder.setMessage("Usunąc wpis?");
 
                         builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Oxygen").child(getRef(position).getKey()).removeValue();
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Doctors").child(getRef(position).getKey()).removeValue();
                             }
                         });
 
@@ -106,8 +103,8 @@ public class OxygenationActivity extends AppCompatActivity {
 
             @NonNull
             @Override
-            public FirebaseViewSP02Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new FirebaseViewSP02Holder(LayoutInflater.from(OxygenationActivity.this).inflate(R.layout.oxygenation_single_row, parent, false));
+            public FirebaseViewDoctorHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                return new FirebaseViewDoctorHolder(LayoutInflater.from(DoctorActivity.this).inflate(R.layout.doctor_single_row, parent, false));
 
             }
         };

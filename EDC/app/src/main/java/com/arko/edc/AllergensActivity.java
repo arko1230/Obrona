@@ -21,14 +21,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class OxygenationActivity extends AppCompatActivity {
-
+public class AllergensActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private FirebaseRecyclerOptions<DataSetFireSP02> mOptions;
-    private FirebaseRecyclerAdapter<DataSetFireSP02,FirebaseViewSP02Holder> mAdapter;
+    private FirebaseRecyclerOptions<DataSetFireAllergen>mOptions;
+    private FirebaseRecyclerAdapter<DataSetFireAllergen,FirebaseViewAllergenHolder> mAdapter;
     private DatabaseReference mDatabaseReference;
     private FirebaseUser mUser;
+
+
 
     @Override
     protected void onStart() {
@@ -43,50 +44,50 @@ public class OxygenationActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_oxygenation);
+        setContentView(R.layout.activity_allergens);
 
-        Button addSugarButton = (Button) findViewById(R.id.button_add_oxygenation);
-        addSugarButton.setOnClickListener(v -> {
-            Intent intent = new Intent(OxygenationActivity.this, AddOxygenation.class);
+
+        Button addAllergenButton = (Button) findViewById(R.id.button_add_allergen);
+        addAllergenButton.setOnClickListener(v -> {
+            Intent intent = new Intent(AllergensActivity.this, AddAllergensData.class);
             startActivity(intent);
             finish();
         });
 
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view_SP02);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view_allergens);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         String uid = mUser.getUid();
 
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Oxygen");
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Allergens");
         mDatabaseReference.keepSynced(true);
 
-        mOptions = new FirebaseRecyclerOptions.Builder<DataSetFireSP02>().setQuery(mDatabaseReference, DataSetFireSP02.class).build();
+        mOptions = new FirebaseRecyclerOptions.Builder<DataSetFireAllergen>().setQuery(mDatabaseReference, DataSetFireAllergen.class).build();
 
-
-        mAdapter = new FirebaseRecyclerAdapter<DataSetFireSP02, FirebaseViewSP02Holder>(mOptions) {
+        mAdapter = new FirebaseRecyclerAdapter<DataSetFireAllergen, FirebaseViewAllergenHolder>(mOptions) {
             @Override
-            protected void onBindViewHolder(@NonNull FirebaseViewSP02Holder holder, int position, @NonNull DataSetFireSP02 model) {
-                holder.oxygenResult.setText(model.getOxygenResult());
-                holder.aboutOxygen.setText(model.getAboutOxygen());
+            protected void onBindViewHolder(@NonNull FirebaseViewAllergenHolder holder, int position, @NonNull DataSetFireAllergen model) {
+                holder.allergenName.setText(model.getAllergenName());
+                holder.allergenFactor.setText(model.getAllergenFactor());
+                holder.allergenShows.setText(model.getAllergenShows());
+                holder.allergenHide.setText(model.getAllergenHide());
                 holder.date.setText(model.getDate());
-
-                holder.btn_del_SP02.setOnClickListener(new View.OnClickListener() {
+                holder.btn_del_allergen.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.btn_del_SP02.getContext());
+                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.btn_del_allergen.getContext());
                         builder.setTitle("Usuwanie wpisu z histori");
                         builder.setMessage("Usunąc wpis?");
 
                         builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Oxygen").child(getRef(position).getKey()).removeValue();
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Allergens").child(getRef(position).getKey()).removeValue();
                             }
                         });
 
@@ -106,17 +107,18 @@ public class OxygenationActivity extends AppCompatActivity {
 
             @NonNull
             @Override
-            public FirebaseViewSP02Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new FirebaseViewSP02Holder(LayoutInflater.from(OxygenationActivity.this).inflate(R.layout.oxygenation_single_row, parent, false));
+            public FirebaseViewAllergenHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                return new FirebaseViewAllergenHolder(LayoutInflater.from(AllergensActivity.this).inflate(R.layout.allergens_single_row, parent, false));
 
             }
         };
 
+
         mRecyclerView.setAdapter(mAdapter);
-
+    }
+        @Override
+        public void onPointerCaptureChanged(boolean hasCapture) {
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-    }
+
 }

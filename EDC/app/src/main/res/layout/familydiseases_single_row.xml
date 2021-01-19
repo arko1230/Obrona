@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="355dp"
+
+    >
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl1">
+
+        <TextView
+            android:id="@+id/about_doctor"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:background="@color/cardview_shadow_start_color"
+            android:gravity="center"
+            android:text="Dane personalne"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_toRightOf="@+id/about_doctor"
+            android:id="@+id/dbDoctorName"
+            android:gravity="center"
+
+            />
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:id="@+id/DoctorType"
+            android:layout_below="@+id/about_doctor"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Rodzaj"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbDoctorType"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/dbDoctorName"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/DoctorType"
+            app:drawableTint="#700C2E" />
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:id="@+id/Doctorabout"
+            android:layout_below="@+id/DoctorType"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Opis"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbDoctorabout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/dbDoctorType"
+            android:layout_marginLeft="-1dp"
+            android:gravity="center"
+            android:layout_marginTop="-1dp"
+            android:layout_toRightOf="@+id/Doctorabout"
+            app:drawableTint="#700C2E" />
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="65dp"
+            android:id="@+id/DoctorContakt"
+            android:layout_below="@+id/Doctorabout"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Kontakt"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbDoctorContakt"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_below="@+id/dbDoctorabout"
+            android:layout_toRightOf="@+id/DoctorContakt"
+            android:gravity="center"
+            app:drawableTint="#700C2E" />
+
+
+
+
+        <Button
+            android:id="@+id/btn_del_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="USUN WPIS"
+            android:layout_below="@+id/dbDoctorContakt"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+
+            app:backgroundTint="#F44336" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/btn_del_doctor"
+            android:background="@color/design_default_color_primary" />
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

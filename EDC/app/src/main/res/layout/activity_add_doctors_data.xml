@@ -154,7 +154,7 @@
 
 
         <Button
-            android:id="@+id/send_FamilyDisease"
+            android:id="@+id/send_Doctor"
             android:layout_width="234dp"
             android:layout_height="70dp"
             android:layout_below="@+id/e_txtDiseaseInfoExtra"

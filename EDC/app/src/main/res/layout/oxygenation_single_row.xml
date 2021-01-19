@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="210dp"
+
+    >
+
+
+    <LinearLayout
+        android:id="@+id/ln1"
+        android:layout_width="match_parent"
+        android:layout_height="210dp">
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="wrap_content"
+            android:layout_height="110dp">
+
+            <TextView
+                android:id="@+id/about_date_SP02"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:gravity="center"
+                android:text="@string/data"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dbDateSp02"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/about_date_SP02"
+                android:gravity="center"
+
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="110dp">
+
+            <TextView
+                android:id="@+id/txtRexultSP02"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:gravity="center"
+                android:text="Pomiar w % Sp02"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dbResultSP02"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/txtRexultSP02"
+                android:gravity="center"
+                android:padding="3dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp">
+
+            <TextView
+                android:id="@+id/txtAboutSP02"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_start_color"
+                android:gravity="center"
+                android:text="@string/about"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/dbAboutSP02"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/txtAboutSP02"
+                android:gravity="center"
+                android:padding="3dp" />
+
+            <Button
+                android:id="@+id/btn_del_SP02"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/dbAboutSP02"
+                android:layout_centerInParent="true"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:text="USUń WPIS"
+                app:backgroundTint="#F44336" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
