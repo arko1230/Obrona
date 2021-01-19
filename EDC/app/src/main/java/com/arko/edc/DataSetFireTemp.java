@@ -2,38 +2,41 @@ package com.arko.edc;
 
 public class DataSetFireTemp {
 
-    String data;
-    String temp_result;
-    String temp_about;
+    String aboutTemperature;
+    String date;
+    String tempResult;
 
 
-    public DataSetFireTemp(String data, String temp_result, String temp_about) {
-        this.data = data;
-        this.temp_result = temp_result;
-        this.temp_about = temp_about;
+
+    public String getDate() {
+        return date;
     }
 
-    public String getData() {
-        return data;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public String getTempResult() {
+        return tempResult;
     }
 
-    public String getTemp_result() {
-        return temp_result;
+    public void setTempResult(String tempResult) {
+        this.tempResult = tempResult;
     }
 
-    public void setTemp_result(String temp_result) {
-        this.temp_result = temp_result;
+    public String getAboutTemperature() {
+        return aboutTemperature;
     }
 
-    public String getTemp_about() {
-        return temp_about;
+    public void setAboutTemperature(String aboutTemperature) {
+        this.aboutTemperature = aboutTemperature;
     }
 
-    public void setTemp_about(String temp_about) {
-        this.temp_about = temp_about;
+    public  DataSetFireTemp(){}
+
+    public DataSetFireTemp(String date, String tempResult, String aboutTemperature) {
+        this.date = date;
+        this.tempResult = tempResult;
+        this.aboutTemperature = aboutTemperature;
     }
 }

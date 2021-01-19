@@ -1,7 +1,7 @@
 package com.arko.edc;
 
 public class DataSetFireSug {
-    String aboutSugar, date, sugarResult, userName, bloodGroup;
+    String aboutSugar, date, sugarResult;
 
     public String getAboutSugar() {
         return aboutSugar;

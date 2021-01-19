@@ -32,8 +32,11 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG ="ERROR" ;
     SignInButton btnS;
     GoogleSignInClient mGoogleSignInClient;
+    public Boolean exit = false;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseListener;
+
+
 
     public void onStart() {
         super.onStart();
@@ -44,8 +47,11 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
         }
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_login2);
         btnS =(SignInButton)findViewById(R.id.btnSign);
         mAuth = FirebaseAuth.getInstance();
@@ -107,6 +113,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
+
+//
+//    private void check (boolean exit){
+//        if (exit == true){
+//
+//            finish();
+//        }
+//
+//
+//    }
 
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);

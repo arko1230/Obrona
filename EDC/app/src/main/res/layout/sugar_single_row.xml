@@ -62,16 +62,6 @@
             android:padding="3dp"
             />
 
-<!--        <Button-->
-<!--            android:layout_width="130dp"-->
-<!--            android:padding="5dp"-->
-<!--            android:layout_centerInParent="true"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:id="@+id/btn_edit_sugar"-->
-<!--            android:layout_below="@+id/sugarResult"-->
-<!--            android:text="EDYTUJ wpis"-->
-<!--            android:layout_margin="5dp"-->
-<!--            />-->
 
     </RelativeLayout>
 

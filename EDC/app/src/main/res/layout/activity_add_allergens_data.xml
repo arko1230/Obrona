@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddPainData">
+    tools:context=".AddAllergensData">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,9 +18,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtDiseaseName"
+            android:id="@+id/txtAllergenName"
             android:textSize="16sp"
-            android:text="Określenie miejsca bólu?"
+            android:text="Nazwa"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
@@ -30,12 +30,12 @@
 
         <EditText
             android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:id="@+id/e_txtPainPlace"
-            android:layout_below="@+id/txtDiseaseName"
+            android:layout_height="80dp"
+            android:id="@+id/e_txtAllergenName"
+            android:layout_below="@+id/txtAllergenName"
             android:layout_centerHorizontal="true"
             android:ems="10"
-            android:hint="Np. Lewy bark"
+            android:hint="Np. Uczulenie po mleku"
 
 
 
@@ -57,9 +57,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_Pain_level"
+            android:id="@+id/txt_AllergenFactor"
             android:textSize="16sp"
-            android:text="Jak mocno?"
+            android:text="Czynnik alergiczny?"
             android:layout_marginBottom="2dp"
             android:layout_marginTop="5dp"
             android:layout_centerHorizontal="true"
@@ -67,16 +67,15 @@
             />
 
         <EditText
-            android:id="@+id/e_txtPain_level"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:inputType="number"
-            android:layout_below="@id/txt_Pain_level"
+            android:id="@+id/e_txt_AllergenFactor"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/txt_AllergenFactor"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
             android:layout_alignParentTop="true"
             android:layout_marginHorizontal="30dp"
-            android:hint="W skali 1 - 10"
+            android:hint="Np. Laktoza"
             />
 
     </RelativeLayout>
@@ -91,9 +90,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_Pain_metod"
+            android:id="@+id/txt_AllergenShows"
             android:textSize="16sp"
-            android:text="W jaki sposób?"
+            android:text="Kiedy występuje"
             android:layout_marginBottom="2dp"
             android:layout_marginTop="5dp"
             android:layout_centerHorizontal="true"
@@ -101,15 +100,15 @@
             />
 
         <EditText
-            android:id="@+id/e_txt_Pain_metod"
+            android:id="@+id/e_txt_AllergenShows"
             android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/txt_Pain_metod"
+            android:layout_height="70dp"
+            android:layout_below="@id/txt_AllergenShows"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
             android:layout_alignParentTop="true"
             android:layout_marginHorizontal="30dp"
-            android:hint="Ucisk, mrowienie?"
+            android:hint="Np. Po wypiciu mleka"
             />
 
     </RelativeLayout>
@@ -122,25 +121,26 @@
         >
 
         <TextView
-            android:id="@+id/txt_When_Pain"
+            android:id="@+id/txt_AllergenHide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
             android:textSize="16sp"
             android:layout_marginBottom="10dp"
-            android:text="Kiedy" />
-
+            android:text="Kiedy ustępuje" />
         <EditText
-            android:id="@+id/e_txt_When_Pain"
+            android:id="@+id/e_txt_AllergenHide"
             android:layout_width="300dp"
-            android:layout_height="90dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/txt_AllergenHide"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/txt_When_Pain"
+            android:layout_marginTop="25dp"
             android:layout_alignParentTop="true"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="26dp"
-            android:hint="Np. 2 razy w tygodniu lub 28,27.02" />
+            android:hint="Po 2 godzinach od spożycia"
+            />
+
 
 
     </RelativeLayout>
@@ -153,59 +153,48 @@
         android:layout_below="@+id/rl4">
 
         <TextView
-            android:id="@+id/txt_When_Pain_start"
+            android:id="@+id/txtAllergenRecognized"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
-            android:text="W jakiej sytuacji występuje"
+            android:text="Data rozpoznania"
             android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/e_txt_When_Pain_start"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_below="@id/txt_When_Pain_start"
-            android:layout_alignParentTop="true"
+        <Button
+            android:id="@+id/btn_datepicker_allergen"
+            android:layout_width="188dp"
+            android:layout_height="62dp"
+            android:layout_below="@+id/txtAllergenRecognized"
             android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="30dp"
-            android:gravity="center"
-            android:layout_marginTop="25dp"
-            android:hint="Np. Podczas odnoszenia dzieci" />
+            android:layout_marginTop="8dp"
+            android:text="Wybierz datę"
 
-
-
+            />
         <TextView
-            android:id="@+id/txt_When_Pain_end"
+            android:id="@+id/txt_aboutdate_allergen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:layout_below="@+id/btn_datepicker_allergen"
             android:layout_marginBottom="10dp"
-            android:layout_below="@+id/e_txt_When_Pain_start"
-            android:text="W jakiej sytuacji przechdzi?"
-            android:textSize="16sp" />
+            android:text="Data rozpoznania to: " />
 
 
-        <EditText
-            android:id="@+id/e_txt_When_Pain_end"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_below="@id/txt_When_Pain_end"
-            android:layout_marginTop="11dp"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:hint="Np. Po chwili jak rozmasuje." />
+
+
 
         <Button
-            android:id="@+id/send_Pain"
+            android:id="@+id/send_Allergen"
             android:layout_width="234dp"
             android:layout_height="70dp"
-            android:layout_below="@+id/e_txt_When_Pain_end"
+            android:layout_below="@+id/txt_aboutdate_allergen"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
             android:text="Zapisz informacje" />
 
     </RelativeLayout>

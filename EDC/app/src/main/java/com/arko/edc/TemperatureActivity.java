@@ -1,11 +1,17 @@
 package com.arko.edc;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -20,11 +26,25 @@ import java.util.ArrayList;
 public class TemperatureActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private ArrayList<DataSetFireSug> mArrayList;
-    private FirebaseRecyclerOptions<DataSetFireSug> mOptions;
-    private FirebaseRecyclerAdapter<DataSetFireSug,FirebaseViewSugarHolder> mAdapter;
+    private ArrayList<DataSetFireTemp> mArrayList;
+    private FirebaseRecyclerOptions<DataSetFireTemp> mOptions;
+    private FirebaseRecyclerAdapter<DataSetFireTemp,FirebaseViewTempHolder> mAdapter;
     private DatabaseReference mDatabaseReference;
     private FirebaseUser mUser;
+
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAdapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mAdapter.stopListening();
+    }
 
 
     @Override
@@ -48,14 +68,62 @@ public class TemperatureActivity extends AppCompatActivity {
         mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Temperature");
         mDatabaseReference.keepSynced(true);
 
+        mOptions = new FirebaseRecyclerOptions.Builder<DataSetFireTemp>().setQuery(mDatabaseReference,DataSetFireTemp.class).build();
 
-//        FirebaseRecyclerOptions<DataSetFireSug> options =
-////                new FirebaseRecyclerOptions.Builder<DataSetFireSug>()
-////                .setQuery(query,DataSetFireSug.class)
-////                .build();
-////
+        mAdapter = new FirebaseRecyclerAdapter<DataSetFireTemp, FirebaseViewTempHolder>(mOptions) {
+            @Override
+            protected void onBindViewHolder(@NonNull FirebaseViewTempHolder holder, int position, @NonNull DataSetFireTemp model) {
+                holder.tempResult.setText(model.getTempResult());
+                holder.date.setText(model.getDate());
+                holder.aboutTemperature.setText(model.getAboutTemperature());
+
+                holder.btn_del_temperature.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.btn_del_temperature.getContext());
+                        builder.setTitle("Usuwanie wpisu z histori");
+                        builder.setMessage("Usunąc wpis?");
+
+                        builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Temperature").child(getRef(position).getKey()).removeValue();
+                            }
+                        });
+
+                        builder.setNegativeButton("NIE", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+                        builder.show();
+
+                    }
+                });
+
+
+            }
+
+            @NonNull
+            @Override
+            public FirebaseViewTempHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                return new FirebaseViewTempHolder(LayoutInflater.from(TemperatureActivity.this).inflate(R.layout.temperature_single_row,parent,false));
+
+            }
+        };
 
 
 
+
+
+        mRecyclerView.setAdapter(mAdapter);
+
+
+
+        }
+
+        @Override
+        public void onPointerCaptureChanged(boolean hasCapture) {
     }
 }

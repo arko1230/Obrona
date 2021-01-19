@@ -93,61 +93,6 @@ public class SugarActivity extends AppCompatActivity {
                 holder.aboutSugar.setText(model.getAboutSugar());
                 holder.date.setText(model.getDate());
                 holder.sugarResult.setText(model.getSugarResult());
-//                holder.btn_edit_sugar.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                     //TODO continue DialogPlus edit holder zakonczyc edycje i usuwanie wpisow
-//                          final DialogPlus dialogPlus=DialogPlus.newDialog(holder.btn_edit_sugar.getContext())
-//                                  .setContentHolder(new ViewHolder(R.layout.dialog_sugar_content))
-//                                  .setExpanded(true,1000)
-//                                  .create();
-//
-//
-//                          View mnewView = dialogPlus.getHolderView();
-//                          EditText aboutSugar = mnewView.findViewById(R.id.etxt_aboutSugar);
-//                          EditText sugarResult = mnewView.findViewById(R.id.etxt_sugarResult);
-//                          TextView date = mnewView.findViewById(R.id.txt_date);
-//                          Button submit =mnewView.findViewById(R.id.btn_updateSugar);
-//
-//
-//                          aboutSugar.setText(model.getAboutSugar());
-//                          sugarResult.setText(model.getSugarResult());
-//
-//
-//
-//                        dialogPlus.show();
-//
-//                        submit.setOnClickListener(new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View v) {
-//                                Map<String,Object> map = new HashMap<>();
-//                                map.put("aboutSugar",aboutSugar.getText().toString());
-////TODO
-////                                map.put("date",dataEnd);
-//                                map.put("sugarResult",sugarResult.getText().toString());
-//
-//                                FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Sugar").child(getRef(position).getKey()).updateChildren(map)
-//                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                            @Override
-//                                            public void onSuccess(Void aVoid) {
-//                                                dialogPlus.dismiss();
-//                                            }
-//                                        })
-//                                        .addOnFailureListener(new OnFailureListener() {
-//                                            @Override
-//                                            public void onFailure(@NonNull Exception e) {
-//
-//                                            }
-//                                        });
-//                            }
-//                        });
-//
-//                    }
-//
-//
-//
-//                });
-
 
                 holder.btn_del_sugar.setOnClickListener(new View.OnClickListener() {
                     @Override

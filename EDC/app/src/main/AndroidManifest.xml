@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EDC">
-        <activity android:name=".AddDrugsData"></activity>
+        <activity android:name=".AddAllergensData"></activity>
+        <activity android:name=".Add_doctors_data" />
+        <activity android:name=".AddDoctorsData" />
+        <activity android:name=".AddDrugsData" />
         <activity android:name=".AddPainData" />
         <activity android:name=".AddNoteData" />
         <activity android:name=".AddMainDisease" />

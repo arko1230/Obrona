@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnExit,btnNotes, btnDrugs, btnLogout ;
     private ImageView imgLogUser;
     private TextView txtUserName, txtUserEmail;
+    private LoginActivity mLoginActivity;
 
 
 
@@ -115,9 +116,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               //  android.os.Process.killProcess(android.os.Process.myPid());
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class );
-                startActivity(intent);
-                System.exit(0);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                finish();
+
+
 
             }
         });
