@@ -1,158 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserInterfaceActivity"
-    >
+    tools:context=".UserInterfaceActivity">
 
-    <TextView
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_user"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/txtUserHome"
-        android:text="Użytkownik"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-
+        android:layout_height="match_parent"
         />
 
 
-    <RelativeLayout
+
+
+    <Button
+        android:id="@+id/btnDoctor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/txtUserHome">
+        android:layout_height="50dp"
+        android:layout_below="@id/btnAllergens"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginBottom="30dp"
+        android:text="Lekarze"
+        app:layout_constraintBottom_toTopOf="@+id/btnAllergens"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/e_txtUserName"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:hint="@string/user_name_hint"
-            android:layout_marginBottom="20dp"
+    <Button
+        android:id="@+id/btnAllergens"
+        android:layout_marginHorizontal="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/allergens"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddUserInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDoctor"
+        android:layout_gravity="end"
 
-            />
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="220dp"
+        android:text="USUN DANE"
+        app:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintEnd_toEndOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent" />
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Podaj swoją grupe krwi:"
-            android:id="@+id/blood_chose"
-            android:layout_below="@+id/e_txtUserName"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            />
-
-        <Spinner
-            android:layout_width="170dp"
-            android:layout_height="30dp"
-            android:id="@+id/blood_spiner"
-            android:layout_below="@+id/e_txtUserName"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="40dp"
-            android:autofillHints="Nie wybrano"/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mój wiek to: "
-            android:id="@+id/txt_age"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/blood_spiner"
-            android:layout_marginLeft="20dp"
-            />
-
-        <EditText
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/e_txtAge"
-            android:inputType="number"
-            android:layout_below="@id/blood_spiner"
-            android:layout_marginRight="40dp"
-            android:layout_alignParentEnd="true"/>
-
-
-        <RelativeLayout
-            android:id="@+id/layout_bloodchoose"
-            android:layout_width="match_parent"
-            android:layout_height="160dp">
-
-
-        </RelativeLayout>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/btnAllergens"
-            android:layout_below="@id/layout_bloodchoose"
-            android:text="@string/allergens"
-            android:layout_marginTop="40dp"
-            />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/btnDoctor"
-            android:layout_below="@id/btnAllergens"
-            android:text="Lekarze"
-            android:layout_marginTop="20dp"
-            />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_margin="40dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/btnDoctor"
-                android:layout_centerInParent="true">
+        android:id="@+id/btnAddUserInfo"
+        android:layout_gravity="end"
+        android:nextFocusRight="@id/btnDelete"
+        android:text="Zmień informacje o użytkowniku"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-                <Button
-                    android:id="@+id/btnDelete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_gravity="end"
-                    android:onClick="proces"
-                    android:text="USUN DANE"
-                    app:backgroundTint="@android:color/holo_red_light" />
-
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btnSave"
-                    android:layout_gravity="end"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="20dp"
-                    android:nextFocusRight="@id/btnDelete"
-                    android:text="Zatwierdz zmiany" />
-
-            </LinearLayout>
-
-
-
-
-
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

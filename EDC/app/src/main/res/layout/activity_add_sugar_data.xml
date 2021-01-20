@@ -20,11 +20,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtresult"
         android:text="@string/about_result_s"
+        android:textSize="25sp"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
         />
 
     <EditText
@@ -34,8 +35,9 @@
         android:layout_below="@+id/txtresult"
         android:layout_centerHorizontal="true"
         android:ems="10"
+        android:hint="Np. 98"
         android:inputType="numberDecimal"
-
+        android:gravity="center"
 
         />
 
@@ -53,20 +55,21 @@
         android:layout_height="wrap_content"
         android:id="@+id/sug_about"
         android:text="@string/about"
-        android:layout_marginBottom="10dp"
-       android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true"
+        android:textSize="25sp"
 
         />
 
     <EditText
         android:id="@+id/e_txtabout"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:layout_below="@id/sug_about"
-        android:layout_marginTop="80dp"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="30dp"
+        android:hint="Np. Przed sniadaniem o 7:45"
+        android:gravity="center"
         />
 
     </RelativeLayout>
@@ -76,36 +79,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl2"
-        android:layout_marginTop="72dp">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:id="@+id/txt_aboutdate_measure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:text="Wybierz date pomiaru" />
+            android:layout_marginTop="10dp"
+            android:text="Wybierz date pomiaru"
+            android:textSize="25sp"
+            />
 
         <Button
             android:id="@+id/btn_datepicker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_below="@+id/txt_aboutdate_measure"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
             android:text="Data"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
 
             />
 
 
         <TextView
             android:id="@+id/txt_datechose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
             android:layout_below="@+id/btn_datepicker"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:text="Wybrano date: "
+            android:textSize="25sp"
+            android:gravity="center"
 
             />
 
@@ -117,14 +126,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl3"
-        android:layout_marginTop="-1dp">
+       >
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_height="60dp"
             android:layout_centerInParent="true"
             android:id="@+id/send"
-            android:text="Zatwierdz" />
+            android:text="Zapisz informacje" />
 
 
     </RelativeLayout>

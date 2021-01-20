@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EDC">
-        <activity android:name=".DoctorActivity"></activity>
+        <activity android:name=".AddUserData"></activity>
+        <activity android:name=".DoctorActivity" />
         <activity android:name=".AllergensActivity" />
         <activity android:name=".AddAllergensData" />
         <activity android:name=".AddDoctorsData" />

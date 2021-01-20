@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rl1"
-        android:layout_marginTop="5dp"
         >
 
 
@@ -19,22 +18,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtDiseaseName"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:text="Jak się nazywa choroba/dolegliwość?"
             android:layout_centerHorizontal="true"
-            android:layout_centerInParent="true"
-            android:layout_alignParentTop="true"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             />
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/e_txtDiseaseName"
+            android:layout_marginHorizontal="20dp"
             android:layout_below="@+id/txtDiseaseName"
             android:layout_centerHorizontal="true"
             android:ems="10"
+            android:gravity="center"
             android:hint="Np. Gorączka zachdniego Nilu"
 
 
@@ -55,11 +54,13 @@
         android:layout_below="@+id/rl1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
             android:layout_height="wrap_content"
             android:id="@+id/txt_Who_disease"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:text="U kogo występuje?"
+            android:gravity="center"
             android:layout_marginBottom="2dp"
             android:layout_marginTop="5dp"
             android:layout_centerHorizontal="true"
@@ -68,12 +69,13 @@
 
         <EditText
             android:id="@+id/e_txtWho_disease"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:paddingHorizontal="20dp"
+            android:gravity="center"
             android:layout_below="@id/txt_Who_disease"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
             android:layout_marginHorizontal="30dp"
             android:hint="Np. Wujeka Jacka, brata mamy"
             />
@@ -84,31 +86,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-
         android:layout_below="@+id/rl2">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
             android:id="@+id/txt_progressDisease"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:text="Diagnostyka, przebieg"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_centerHorizontal="true"
 
             />
 
         <EditText
             android:id="@+id/e_txtProgressDisease"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@id/txt_progressDisease"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginHorizontal="30dp"
-            android:hint="Specjalne leki, przebieg łągodny"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:hint="Np. Specjalne leki, przebieg łągodny"
             />
 
     </RelativeLayout>
@@ -122,23 +124,24 @@
 
         <TextView
             android:id="@+id/txt_aboutDrugsDisease"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
             android:text="Leczenie" />
         <EditText
             android:id="@+id/e_txtDrugsDisease"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@id/txt_aboutDrugsDisease"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginHorizontal="30dp"
-            android:hint="Brane leki, jakie środki"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="20dp"
+            android:hint="Np. Brane leki, jakie środki"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
             />
 
 
@@ -154,35 +157,36 @@
 
         <TextView
             android:id="@+id/txtDiseaseInfoExtra"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginHorizontal="30dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="10dp"
             android:text="Dodatkowe informacje"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/e_txtDiseaseInfoExtra"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_below="@id/txtDiseaseInfoExtra"
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
             android:hint="Np. Kontakt do tej osoby" />
 
 
         <Button
             android:id="@+id/send_FamilyDisease"
-            android:layout_width="234dp"
-            android:layout_height="70dp"
             android:layout_below="@+id/e_txtDiseaseInfoExtra"
             android:layout_centerHorizontal="true"
-
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_height="60dp"
             android:text="Zapisz informacje" />
 
     </RelativeLayout>

@@ -16,24 +16,28 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtDiseaseName"
-            android:textSize="16sp"
-            android:text="Jak się nazywa choroba/dolegliwość?"
+            android:textSize="25sp"
+            android:text="Jak się nazywa choroba/ dolegliwość?"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="10dp"
+            android:gravity="center"
             />
 
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:id="@+id/e_txtDiseaseN"
+            android:layout_marginHorizontal="20dp"
             android:layout_below="@+id/txtDiseaseName"
             android:layout_centerHorizontal="true"
+            android:gravity="center"
             android:ems="10"
             android:hint="Np. Gorączka zachdniego Nilu"
 
@@ -50,30 +54,29 @@
         android:id="@+id/rl2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-
         android:layout_below="@+id/rl1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_Time_disease"
-            android:textSize="16sp"
+            android:textSize="25sp"
             android:text="Czas występowania?"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp"
             android:layout_centerHorizontal="true"
 
             />
 
         <EditText
             android:id="@+id/e_Time_disease"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:paddingHorizontal="30dp"
             android:layout_below="@id/txt_Time_disease"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
             android:layout_marginHorizontal="30dp"
             android:hint="Np. 10.09 - 23.09"
             />
@@ -83,7 +86,7 @@
         android:id="@+id/rl3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
 
         android:layout_below="@+id/rl2">
 
@@ -91,23 +94,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_Time_Recovery"
-            android:textSize="16sp"
+            android:textSize="25sp"
             android:text="Czas leczenia w ośrodku?"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_centerHorizontal="true"
 
             />
 
         <EditText
             android:id="@+id/e_txtTimeRecovery"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@id/txt_Time_Recovery"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
             android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
             android:hint="Np. 2 tygodnie lub 10.09 - 24.09"
             />
 
@@ -117,7 +119,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl3"
-        android:layout_marginTop="10dp"
         >
 
         <TextView
@@ -125,19 +126,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="25sp"
             android:text="Objawy" />
         <EditText
             android:id="@+id/e_txtSymptoms"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
             android:layout_below="@id/txt_Symptoms"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
             android:layout_marginHorizontal="30dp"
+            android:gravity="center"
             android:hint="Np. Nudności, biegunka, gorączla"
             />
 
@@ -154,35 +154,37 @@
 
         <TextView
             android:id="@+id/txtProcedure"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="10dp"
             android:text="Postępowanie"
-            android:textSize="16sp" />
+            android:textSize="25sp" />
 
         <EditText
             android:id="@+id/e_txtProcedure"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
             android:layout_below="@id/txtProcedure"
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
             android:hint="Np. Przyjmowane leki, zalecenia" />
 
 
         <Button
             android:id="@+id/send_MainDisease"
-            android:layout_width="234dp"
-            android:layout_height="70dp"
             android:layout_below="@+id/e_txtProcedure"
             android:layout_centerHorizontal="true"
-
             android:layout_marginTop="25dp"
             android:layout_marginBottom="25dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_height="60dp"
+
             android:text="Zapisz informacje" />
 
     </RelativeLayout>

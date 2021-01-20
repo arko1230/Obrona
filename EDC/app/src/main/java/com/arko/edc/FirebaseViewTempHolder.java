@@ -18,7 +18,6 @@ public class FirebaseViewTempHolder extends RecyclerView.ViewHolder {
         aboutTemperature = itemView.findViewById(R.id.aboutTemperature);
        date = itemView.findViewById(R.id.date_t);
        tempResult = itemView.findViewById(R.id.temperatureResult);
-
        btn_del_temperature = itemView.findViewById(R.id.btn_del_temperature);
     }
 }

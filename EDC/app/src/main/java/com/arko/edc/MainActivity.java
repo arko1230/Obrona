@@ -25,9 +25,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnExit,btnNotes, btnDrugs, btnLogout ;
+    private Button btnUser, btnMeasurement,btnDiseases,btnPains,btnNotes, btnDrugs, btnLogout ;
     private ImageView imgLogUser;
-    private TextView txtUserName, txtUserEmail;
+    private TextView txtUserEmail;
     private LoginActivity mLoginActivity;
 
 
@@ -112,17 +112,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        btnExit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              //  android.os.Process.killProcess(android.os.Process.myPid());
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                finish();
 
-
-
-            }
-        });
 
         btnNotes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,14 +137,13 @@ public class MainActivity extends AppCompatActivity {
 
         //imgLogUser = (ImageView) findViewById(R.id.imgViewUser);
         txtUserEmail = (TextView) findViewById(R.id.txtUserEmail);
-        txtUserName = (TextView) findViewById(R.id.txtUserName);
+//        txtUserName = (TextView) findViewById(R.id.txtUserName);
         imgLogUser = (ImageView) findViewById(R.id.imgViewUser);
         btnLogout = (Button) findViewById(R.id.btnLogout);
         btnUser = (Button) findViewById(R.id.btnUser);
         btnMeasurement = (Button) findViewById(R.id.btnMeasurement);
         btnDiseases = (Button) findViewById(R.id.btnDiseases);
         btnPains = (Button) findViewById(R.id.btnPains);
-        btnExit = (Button) findViewById(R.id.btnExit);
         btnNotes = (Button) findViewById(R.id.btnNotes);
         btnDrugs = (Button) findViewById(R.id.btnDrugs);
 

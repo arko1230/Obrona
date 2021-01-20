@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtresult"
             android:text="Wynik pomiaru w kg"
-            android:textSize="16sp"
+            android:textSize="25sp"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
@@ -29,12 +29,14 @@
             />
 
         <EditText
-            android:layout_width="100dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/result_etxt_weight"
             android:layout_below="@+id/txtresult"
             android:layout_centerHorizontal="true"
             android:ems="10"
+            android:gravity="center"
+            android:hint="78"
             android:inputType="numberDecimal"
 
 
@@ -45,17 +47,19 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:id="@+id/rl2"
-        android:layout_below="@+id/rl1">
+        android:layout_below="@+id/rl1"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sug_about"
+            android:layout_marginTop="10dp"
             android:text="@string/about"
             android:layout_marginBottom="10dp"
-            android:textSize="16sp"
+            android:textSize="25sp"
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
 
@@ -67,8 +71,7 @@
             android:layout_height="80dp"
             android:layout_below="@id/sug_about"
             android:hint="Np. U lekarza"
-            android:layout_marginTop="80dp"
-            android:layout_alignParentTop="true"
+            android:gravity="center"
             android:layout_marginHorizontal="30dp"
             />
 
@@ -87,15 +90,17 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
+            android:textSize="25sp"
             android:text="Wybierz date pomiaru" />
 
         <Button
             android:id="@+id/btn_datepicker_weight"
-            android:layout_width="210dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="80dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/txt_aboutdate_measure"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:text="Data"
 
             />
@@ -105,9 +110,10 @@
             android:id="@+id/txt_datechose_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="25sp"
             android:layout_below="@+id/btn_datepicker_weight"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:text="Wybrano date: "
 
             />
@@ -124,10 +130,11 @@
 
         <Button
             android:id="@+id/send_weight"
-            android:layout_width="256dp"
-            android:layout_height="66dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_height="60dp"
             android:layout_centerInParent="true"
-            android:text="Zatwierdz" />
+            android:text="Zapisz informacje" />
 
 
     </RelativeLayout>

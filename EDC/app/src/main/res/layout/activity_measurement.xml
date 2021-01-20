@@ -22,7 +22,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtMeasurement"
                     android:text="Pomiary"
-                    android:textSize="25sp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
                     android:layout_centerHorizontal="true"
 

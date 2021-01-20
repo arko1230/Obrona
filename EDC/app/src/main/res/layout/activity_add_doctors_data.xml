@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rl1"
-        android:layout_marginTop="5dp"
         >
 
 
@@ -19,26 +18,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtDoctorName"
-            android:textSize="16sp"
+            android:textSize="25sp"
             android:text="Dane personalne"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="10dp"
             />
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="90dp"
             android:id="@+id/e_txtDoctorName"
+            android:height="30dp"
+            android:layout_marginHorizontal="30dp"
             android:layout_below="@+id/txtDoctorName"
             android:layout_centerHorizontal="true"
+            android:gravity="center"
             android:ems="10"
             android:hint="Np. Imie i nazwisko"
-
-
-
             />
 
 
@@ -50,31 +49,30 @@
         android:id="@+id/rl2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-
         android:layout_below="@+id/rl1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txt_DoctorType"
-            android:textSize="16sp"
+            android:textSize="25sp"
+            android:layout_marginHorizontal="20dp"
             android:text="Rodzaj"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
             android:layout_centerHorizontal="true"
 
             />
 
         <EditText
             android:id="@+id/e_txt_DoctorType"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_below="@id/txt_DoctorType"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
             android:layout_marginHorizontal="30dp"
+            android:gravity="center"
             android:hint="Np. lekarz rodzinny"
             />
 
@@ -83,32 +81,29 @@
         android:id="@+id/rl3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/rl2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_DoctorAbout"
-            android:textSize="16sp"
+            android:textSize="25sp"
             android:text="Opis"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"
             android:layout_centerHorizontal="true"
 
             />
 
         <EditText
             android:id="@+id/etxt_DoctorAbout"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_below="@id/txt_DoctorAbout"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
             android:layout_marginHorizontal="30dp"
-            android:hint="Specjalizacja? Jakie badania przeprowadził?"
+            android:gravity="center"
+            android:hint="Np. Specjalizacja, jakie badania przeprowadził."
             />
 
     </RelativeLayout>
@@ -117,7 +112,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl3"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         >
 
         <TextView
@@ -125,19 +120,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
+            android:textSize="25sp"
             android:layout_marginBottom="10dp"
             android:text="Kontakt" />
         <EditText
             android:id="@+id/etxt_DoctorContakt"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_below="@id/txt_DoctorContakt"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
             android:layout_marginHorizontal="30dp"
+            android:gravity="center"
             android:hint="Email, telefon, telefon do przychodni?"
             />
 
@@ -154,14 +148,15 @@
 
 
         <Button
-            android:id="@+id/send_Doctor"
-            android:layout_width="234dp"
-            android:layout_height="70dp"
-            android:layout_below="@+id/e_txtDiseaseInfoExtra"
-            android:layout_centerHorizontal="true"
 
-            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="25dp"
+            android:id="@+id/send_Doctor"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
             android:text="Zapisz informacje" />
 
     </RelativeLayout>

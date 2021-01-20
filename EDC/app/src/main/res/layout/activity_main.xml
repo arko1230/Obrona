@@ -8,36 +8,17 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtUserName"
-            android:text="Nazwa użutkownika"
-            android:layout_marginTop="30dp"
-            android:textSize="15sp"
-            android:layout_centerHorizontal="true"/>
+
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:id="@+id/imgViewUser"
-            android:layout_below="@+id/txtUserName"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            />
-
-
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnLogout"
-            android:text="Wyloguj"
-            android:layout_toRightOf="@+id/imgViewUser"
-            android:layout_below="@+id/txtUserName"
-            android:layout_margin="10dp"
-
+            android:layout_marginTop="20dp"
             />
 
 
@@ -51,14 +32,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/appName"
             android:text="Elektroniczny Dziennik Chorego"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
             />
@@ -67,6 +49,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:id="@+id/menu"
             android:layout_below="@+id/appName">
 
@@ -78,7 +61,7 @@
                 android:layout_marginRight="20dp"
                 android:id="@+id/btnUser"
                 android:text="Użytkownik"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 />
 
 
@@ -140,14 +123,14 @@
                 />
 
             <Button
-                android:id="@+id/btnExit"
-                android:layout_width="140dp"
+                android:id="@+id/btnLogout"
+                android:text="Wyloguj"
                 android:layout_height="70dp"
+                android:layout_width="match_parent"
                 android:layout_below="@+id/btnNotes"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="50dp"
-                android:layout_marginRight="20dp"
-                android:text="Wyjscie"
+                android:layout_marginRight="250dp"
                 app:backgroundTint="#C10000" />
 
 
@@ -157,11 +140,19 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtUserEmail"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Zalogowano jako: " />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email@dlugiiiiiiiii"
+        android:text="Email"
         android:textSize="18sp"
         android:id="@+id/txtUserEmail"
         android:layout_alignParentBottom="true"

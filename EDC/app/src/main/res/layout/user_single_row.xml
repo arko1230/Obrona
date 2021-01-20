@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="286dp"
+
+    >
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl1">
+
+        <TextView
+            android:id="@+id/txt_username"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:background="@color/cardview_shadow_start_color"
+            android:gravity="center"
+            android:text="Nazwa użytkownika"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_toRightOf="@+id/txt_username"
+            android:id="@+id/dbuserName"
+            android:gravity="center"
+
+            />
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:id="@+id/txtBlood_group"
+            android:layout_below="@+id/txt_username"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Grupa krwi"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbUserBlod"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/dbuserName"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/txtBlood_group"
+            app:drawableTint="#700C2E" />
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:id="@+id/txtuserBorn"
+            android:layout_below="@+id/txtBlood_group"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Data urodzenia"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbUserBorn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/dbUserBlod"
+            android:layout_marginLeft="-1dp"
+            android:gravity="center"
+            android:layout_marginTop="-1dp"
+            android:layout_toRightOf="@+id/txtuserBorn"
+            app:drawableTint="#700C2E" />
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="65dp"
+            android:id="@+id/txtMale"
+            android:layout_below="@+id/txtuserBorn"
+            android:background="@color/cardview_shadow_start_color"
+            android:text="Płeć"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/dbUserMale"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_below="@+id/dbUserBorn"
+            android:layout_toRightOf="@+id/txtuserBorn"
+            android:gravity="center"
+            app:drawableTint="#700C2E" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

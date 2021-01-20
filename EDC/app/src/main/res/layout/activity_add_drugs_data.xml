@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rl1"
-        android:layout_marginTop="5dp"
         >
 
 
@@ -19,18 +18,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtDiseaseName"
-            android:textSize="16sp"
-            android:text="Jak się nazywa leku?"
+            android:textSize="20sp"
+            android:text="Nazwa leku"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             />
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
             android:id="@+id/e_txtTitleDrug"
             android:layout_below="@+id/txtDiseaseName"
             android:layout_centerHorizontal="true"
@@ -48,30 +49,28 @@
         android:id="@+id/rl2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-
         android:layout_below="@+id/rl1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_Drug_dosage"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:text="Dawkowanie"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
 
             />
 
         <EditText
             android:id="@+id/etxt_Drug_dosage"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@id/txt_Drug_dosage"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
             android:layout_marginHorizontal="30dp"
             android:hint="Np. 2 tabletki"
             />
@@ -81,32 +80,29 @@
         android:id="@+id/rl3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/rl2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_dayPart_takeDrug"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:text="Pora dnia?"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_centerHorizontal="true"
 
             />
 
         <EditText
             android:id="@+id/e_txt_dayPart_takeDrug"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@id/txt_dayPart_takeDrug"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentTop="true"
             android:layout_marginHorizontal="30dp"
             android:hint="Np. Rano i wieczorem"
+            android:gravity="center"
             />
 
     </RelativeLayout>
@@ -115,7 +111,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl3"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         >
 
         <TextView
@@ -123,18 +119,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:textSize="16sp"
-            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:layout_marginBottom="5dp"
             android:text="Działanie" />
         <EditText
             android:id="@+id/e_txt_DrugAction"
-            android:layout_width="350dp"
-            android:layout_height="90dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_below="@id/txt_DrugAction"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
-            android:layout_alignParentTop="true"
             android:layout_marginHorizontal="30dp"
+            android:gravity="center"
             android:hint="Np. Leczy ból glowy, niestrawność"
             />
 
@@ -157,17 +153,17 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:text="Przeciwskazania"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/e_txtDrugContraindications"
-            android:layout_width="350dp"
-            android:layout_height="90dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_below="@id/txtDrugContraindications"
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
             android:hint="Np. Picie alkoholu" />
 
 
@@ -178,14 +174,14 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-
             android:text="Czas zażywania"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/e_txtDrugPeriod_of_use"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:layout_below="@id/txtDrugPeriod_of_use"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="30dp"
@@ -196,12 +192,14 @@
 
         <Button
             android:id="@+id/send_Drug"
-            android:layout_width="234dp"
-            android:layout_height="70dp"
             android:layout_below="@+id/e_txtDrugPeriod_of_use"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="25dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="40dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
             android:text="Zapisz informacje" />
 
     </RelativeLayout>

@@ -137,7 +137,6 @@ public class LoginActivity extends AppCompatActivity {
                             String user_name = user.getDisplayName();
                             String user_id = user.getUid();
                             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                            Toast.makeText(getApplicationContext(),user_id,Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                             mDatabase.child("Users").child(user_id).child("UserName").setValue(user_name);
                             finish();

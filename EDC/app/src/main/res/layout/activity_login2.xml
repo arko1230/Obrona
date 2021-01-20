@@ -7,22 +7,41 @@
     tools:context=".LoginActivity">
 
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/ic_launcher"></ImageView>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Witaj, zaloguj się!"
+        android:textSize="36sp"
         android:layout_centerInParent="true"
         android:id="@+id/txtSign"
         android:textStyle="bold"/>
 
 
     <com.google.android.gms.common.SignInButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/txtSign"
+        android:layout_alignRight="@id/txtSign"
         android:id="@+id/btnSign"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSign"
+        android:text="Twój zapis informacji zdrowotnych... "
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textSize="20sp"
+        android:textStyle="italic"/>
 
 </RelativeLayout>

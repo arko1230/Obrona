@@ -1,43 +1,48 @@
 package com.arko.edc;
 
-import android.widget.EditText;
-
 public class DataSetFireUser {
 
-    private String blood,e_txtUserName,e_txtAge;
+    String userAge, userBlood, userMale, userName;
 
-
-    public String getBlood() {
-        return blood;
+    public String getUserAge() {
+        return userAge;
     }
 
-    public void setBlood(String blood) {
-        this.blood = blood;
+    public void setUserAge(String userAge) {
+        this.userAge = userAge;
     }
 
-    public String getE_txtUserName() {
-        return e_txtUserName;
+    public String getUserBlood() {
+        return userBlood;
     }
 
-    public void setE_txtUserName(String e_txtUserName) {
-        this.e_txtUserName = e_txtUserName;
+    public void setUserBlood(String userBlood) {
+        this.userBlood = userBlood;
     }
 
-    public String getE_txtAge() {
-        return e_txtAge;
+    public String getUserMale() {
+        return userMale;
     }
 
-    public void setE_txtAge(String e_txtAge) {
-        this.e_txtAge = e_txtAge;
+    public void setUserMale(String userMale) {
+        this.userMale = userMale;
     }
 
-    public DataSetFireUser(){
-
+    public String getUserName() {
+        return userName;
     }
 
-    public DataSetFireUser(String blood, String e_txtUserName, String e_txtAge) {
-        this.blood = blood;
-        this.e_txtUserName = e_txtUserName;
-        this.e_txtAge = e_txtAge;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public DataSetFireUser() {
+    }
+
+    public DataSetFireUser(String userAge, String userBlood, String userMale, String userName) {
+        this.userAge = userAge;
+        this.userBlood = userBlood;
+        this.userMale = userMale;
+        this.userName = userName;
     }
 }

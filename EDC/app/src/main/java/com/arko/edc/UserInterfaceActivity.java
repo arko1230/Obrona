@@ -2,12 +2,14 @@ package com.arko.edc;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
@@ -16,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -38,38 +41,30 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserInterfaceActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class UserInterfaceActivity extends AppCompatActivity {
 
-    EditText e_txtUserName,e_txtAge;
-    Button btn_delete, btn_save,btnAllergens,btnDoctor;
-    String blood[] = {"Nie wybrano","0-", "0+","B-","B+","A-","A+","AB-","AB+"};
+    Button btn_delete, addInfoButton, btnAllergens, btnDoctor;
 
 
     private RecyclerView mRecyclerView;
-//    private ArrayList<DataSetFireUser> mArrayList;
-//    private FirebaseRecyclerOptions<DataSetFireUser> mOptions;
-//    private FirebaseRecyclerAdapter<DataSetFireUser,FirebaseViewUserHolder> mAdapter;
+    private ArrayList<DataSetFireUser> mArrayList;
+    private FirebaseRecyclerOptions<DataSetFireUser> mOptions;
+    private FirebaseRecyclerAdapter<DataSetFireUser,FirebaseViewUserHolder> mAdapter;
     private DatabaseReference mDatabaseReference;
     private FirebaseUser mUser;
-    private Spinner bloodSpiner;
-    private String itemBlood;
-
-    private DataSetFireUser mDataSetFireUser;
 
 
-//
-//
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        mAdapter.startListening();
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        mAdapter.stopListening();
-//    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAdapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mAdapter.stopListening();
+    }
 
 
     @Override
@@ -78,49 +73,20 @@ public class UserInterfaceActivity extends AppCompatActivity implements AdapterV
         setContentView(R.layout.activity_user_interface);
 
 
+        mRecyclerView = findViewById(R.id.recycle_view_user);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
-        e_txtUserName=(EditText)findViewById(R.id.e_txtUserName);
-        e_txtAge = findViewById(R.id.e_txtAge);
-        btn_delete = (Button)findViewById(R.id.btnDelete);
-        btn_save = (Button)findViewById(R.id.btnSave);
-        bloodSpiner = findViewById(R.id.blood_spiner);
+        btn_delete = (Button) findViewById(R.id.btnDelete);
         btnAllergens = findViewById(R.id.btnAllergens);
         btnDoctor = findViewById(R.id.btnDoctor);
+        addInfoButton = (Button) findViewById(R.id.btnAddUserInfo);
 
-
-        bloodSpiner.setOnItemSelectedListener(this);
-        mDataSetFireUser = new DataSetFireUser();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
-        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("User");
-
-        ArrayAdapter arrayBlodAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item,blood);
-        arrayBlodAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        bloodSpiner.setAdapter(arrayBlodAdapter);
-//        mDatabaseReference.keepSynced(true);
-//
-//        mOptions = new FirebaseRecyclerOptions.Builder<DataSetFireUser>().setQuery(mDatabaseReference,DataSetFireUser.class).build();
-//        mAdapter = new FirebaseRecyclerAdapter<DataSetFireUser, FirebaseViewUserHolder>(mOptions) {
-//            @Override
-//            protected void onBindViewHolder(@NonNull FirebaseViewUserHolder holder, int position, @NonNull DataSetFireUser model) {
-//                holder
-//            }
-//
-//            @NonNull
-//            @Override
-//            public FirebaseViewUserHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//                return null;
-//            }
-////        };
-//
-//
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        String uid = user.getUid();
-//        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("User");
-//
-//        String age = current_user_db.get().toString();
+        addInfoButton.setOnClickListener(v -> {
+            Intent intent = new Intent(UserInterfaceActivity.this, AddUserData.class);
+            startActivity(intent);
+            finish();
+        });
 
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,8 +99,11 @@ public class UserInterfaceActivity extends AppCompatActivity implements AdapterV
                 builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String uid = user.getUid();
+                        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("User");
+
                         FirebaseDatabase.getInstance().getReference().child("Users").child(uid).removeValue();
-                        //TODO wylogowanie i wymaganie autoryzacji
                         FirebaseAuth.getInstance().signOut();
                         Intent intent = new Intent(btn_delete.getContext(), LoginActivity.class);
                         startActivity(intent);
@@ -155,32 +124,6 @@ public class UserInterfaceActivity extends AppCompatActivity implements AdapterV
             }
         });
 
-
-        btn_save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                itemBlood = bloodSpiner.getSelectedItem().toString();
-
-                String userName = e_txtUserName.getText().toString();
-                String userAge = e_txtAge.getText().toString();
-                String userBlood = itemBlood;
-
-
-                Map newRec = new HashMap();
-                newRec.put("userName",userName);
-                newRec.put("userAge",userAge);
-                newRec.put("userBlood",userBlood);
-                current_user_db.setValue(newRec);
-                Intent intent = new Intent(UserInterfaceActivity.this, UserInterfaceActivity.class);
-                startActivity(intent);
-                finish();
-
-
-                }
-
-        });
-
         btnAllergens.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,6 +139,42 @@ public class UserInterfaceActivity extends AppCompatActivity implements AdapterV
                 startActivity(intent);
             }
         });
+
+
+        mUser= FirebaseAuth.getInstance().getCurrentUser();
+
+        String uid = mUser.getUid();
+
+        mArrayList = new ArrayList<DataSetFireUser>();
+
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("User");
+        mDatabaseReference.keepSynced(true);
+
+        mOptions = new FirebaseRecyclerOptions.Builder<DataSetFireUser>().setQuery(mDatabaseReference,DataSetFireUser.class).build();
+
+        mAdapter = new FirebaseRecyclerAdapter<DataSetFireUser, FirebaseViewUserHolder>(mOptions) {
+            @Override
+            protected void onBindViewHolder(@NonNull FirebaseViewUserHolder holder, int position, @NonNull DataSetFireUser model) {
+                holder.userName.setText(model.getUserName());
+                holder.userBlood.setText(model.getUserBlood());
+                holder.userAge.setText(model.getUserAge());
+                holder.userMale.setText(model.getUserMale());
+            }
+
+
+            @NonNull
+            @Override
+            public FirebaseViewUserHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+                return new FirebaseViewUserHolder(LayoutInflater.from(UserInterfaceActivity.this).inflate(R.layout.user_single_row,viewGroup,false));
+            }
+        };
+
+
+        mRecyclerView.setAdapter(mAdapter);
+
+
+
+
     }
 
 
@@ -206,16 +185,10 @@ public class UserInterfaceActivity extends AppCompatActivity implements AdapterV
 
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        itemBlood = bloodSpiner.getSelectedItem().toString();
 
 
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-
-    }
 }
+
+
+
+
