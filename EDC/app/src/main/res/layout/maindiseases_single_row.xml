@@ -30,7 +30,7 @@
             android:layout_toRightOf="@+id/about_doctor"
             android:id="@+id/dbDisease_Name"
             android:gravity="center"
-
+            android:textSize="20sp"
             />
 
 
@@ -51,6 +51,7 @@
             android:layout_height="70dp"
             android:layout_below="@+id/dbDisease_Name"
             android:gravity="center"
+            android:textSize="20sp"
             android:layout_toRightOf="@+id/DoctorType"
             app:drawableTint="#700C2E" />
 
@@ -72,6 +73,8 @@
             android:layout_height="70dp"
             android:layout_below="@+id/dbTime_disease"
             android:gravity="center"
+            android:textSize="20sp"
+
             android:layout_toRightOf="@+id/Doctorabout"
             app:drawableTint="#700C2E" />
 
@@ -93,6 +96,8 @@
             android:layout_below="@+id/Doctorabout"
             android:layout_toRightOf="@+id/DoctorContakt"
             android:gravity="center"
+            android:textSize="17sp"
+
             app:drawableTint="#700C2E" />
 
 
@@ -115,6 +120,8 @@
             android:layout_below="@+id/dbSymptoms"
             android:layout_toRightOf="@+id/DoctorContakt"
             android:gravity="center"
+            android:textSize="17sp"
+
             app:drawableTint="#700C2E" />
 
 
@@ -134,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_below="@+id/btn_del_Disease"
-            android:background="@color/design_default_color_primary" />
+            android:background="@color/purple_700" />
 
 
 

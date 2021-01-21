@@ -29,6 +29,7 @@
             android:layout_height="50dp"
             android:layout_toRightOf="@+id/txtNoteTitle"
             android:id="@+id/dbNoteTitle"
+            android:textSize="20sp"
             android:gravity="center"
 
             />
@@ -73,6 +74,7 @@
             android:layout_below="@+id/dbAboutNote"
             android:layout_marginLeft="-1dp"
             android:gravity="center"
+            android:textSize="20sp"
             android:layout_marginTop="-1dp"
             android:layout_toRightOf="@+id/txtNoteDate"
             app:drawableTint="#700C2E" />
@@ -97,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_below="@+id/btn_del_note"
-            android:background="@color/design_default_color_primary" />
+            android:background="@color/purple_700" />
 
 
 

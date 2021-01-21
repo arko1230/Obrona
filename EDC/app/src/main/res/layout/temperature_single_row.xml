@@ -14,9 +14,11 @@
         android:layout_width="match_parent"
         android:layout_height="250dp">
 
+
+
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:id="@+id/rl1">
 
             <TextView
@@ -33,17 +35,19 @@
                 android:layout_height="150dp"
                 android:layout_below="@+id/about_date_t"
                 android:id="@+id/date_t"
+                android:textSize="20sp"
                 android:padding="3dp"
                 android:gravity="center"
 
                 />
 
 
+
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="200dp">
+            android:layout_height="250dp">
 
             <TextView
                 android:layout_width="180dp"
@@ -61,14 +65,26 @@
                 android:id="@+id/temperatureResult"
                 android:gravity="center"
                 android:padding="3dp"
+                android:textSize="25sp"
+
                 />
+            <Button
+                android:id="@+id/btn_del_temperature"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/temperatureResult"
+                android:layout_centerHorizontal="true"
+                android:text="USUN wpis"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                app:backgroundTint="#F44336" />
 
 
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="250dp"
             >
 
@@ -92,16 +108,7 @@
                 android:gravity="center"
                 />
 
-            <Button
-                android:id="@+id/btn_del_temperature"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_below="@+id/aboutTemperature"
-                android:text="USUN"
-                android:layout_centerInParent="true"
-                android:padding="5dp"
-                android:layout_margin="5dp"
-                app:backgroundTint="#F44336" />
+
 
 
 

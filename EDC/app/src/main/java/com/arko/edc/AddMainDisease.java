@@ -63,7 +63,7 @@ public class AddMainDisease extends AppCompatActivity {
             newRec.put("Time_disease",Time_disease);
             newRec.put("TimeRecovery",TimeRecovery);
             newRec.put("Symptoms",Symptoms);
-            newRec.put("gee",Procedure);
+            newRec.put("Procedure",Procedure);
 
             current_user_db.push().setValue(newRec);
 

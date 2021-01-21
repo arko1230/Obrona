@@ -81,10 +81,10 @@ public class AllergensActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(holder.btn_del_allergen.getContext());
-                        builder.setTitle("Usuwanie wpisu z histori");
-                        builder.setMessage("Usunąc wpis?");
+                        builder.setTitle("USUWANIE WPISU Z HISTORI");
+                        builder.setMessage("Czy napewno chcesz usunąć ten zapis?");
 
-                        builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+                        builder.setPositiveButton("TAK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Allergens").child(getRef(position).getKey()).removeValue();

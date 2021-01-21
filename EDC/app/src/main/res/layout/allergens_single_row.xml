@@ -30,6 +30,8 @@
                 android:layout_toRightOf="@+id/about_alergens"
                 android:id="@+id/name_alergens"
                 android:gravity="center"
+                android:textSize="17sp"
+
 
                 />
 
@@ -52,6 +54,8 @@
                 android:layout_below="@+id/name_alergens"
                 android:gravity="center"
                 android:layout_toRightOf="@+id/showAllergenFactor"
+                android:textSize="17sp"
+
                 app:drawableTint="#700C2E" />
 
 
@@ -75,6 +79,8 @@
                 android:gravity="center"
                 android:layout_marginTop="-1dp"
                 android:layout_toRightOf="@+id/txtAllergenShows"
+                android:textSize="17sp"
+
                 app:drawableTint="#700C2E" />
 
             <TextView
@@ -95,6 +101,8 @@
                 android:layout_below="@+id/dbAllergenShows"
                 android:layout_toRightOf="@+id/txtAllergenShows"
                 android:gravity="center"
+                android:textSize="17sp"
+
                 app:drawableTint="#700C2E" />
 
             <TextView
@@ -114,6 +122,8 @@
                 android:layout_below="@+id/dbAllergenHide"
                 android:layout_toRightOf="@+id/txtAllergenShows"
                 android:gravity="center"
+                android:textSize="20sp"
+
                 app:drawableTint="#700C2E" />
 
 
@@ -132,7 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:layout_below="@+id/dbdate_allergen"
-                android:background="@color/design_default_color_primary" />
+                android:background="@color/purple_700" />
 
 
 

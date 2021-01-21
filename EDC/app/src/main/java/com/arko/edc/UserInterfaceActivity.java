@@ -93,10 +93,10 @@ public class UserInterfaceActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(btn_delete.getContext());
-                builder.setTitle("USUń KONTO");
+                builder.setTitle("USUN KONTO");
                 builder.setMessage("Czy chcesz usunąc wszystkie swoje dane?");
 
-                builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("TAK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

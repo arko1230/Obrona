@@ -30,6 +30,7 @@
             android:layout_toRightOf="@+id/txtPainPlace"
             android:id="@+id/dbPainPlace"
             android:gravity="center"
+            android:textSize="17sp"
 
             />
 
@@ -52,6 +53,7 @@
             android:layout_below="@+id/dbPainPlace"
             android:gravity="center"
             android:layout_toRightOf="@+id/txtPainPlace"
+            android:textSize="17sp"
             app:drawableTint="#700C2E" />
 
 
@@ -73,6 +75,8 @@
             android:layout_below="@+id/dbPain_level"
             android:gravity="center"
             android:layout_toRightOf="@+id/txt_Pain_metod"
+            android:textSize="17sp"
+
             app:drawableTint="#700C2E" />
 
         <TextView
@@ -93,6 +97,8 @@
             android:layout_below="@+id/dbPain_metod"
             android:layout_toRightOf="@+id/txt_When_Pain"
             android:gravity="center"
+            android:textSize="17sp"
+
             app:drawableTint="#700C2E" />
 
 
@@ -115,6 +121,8 @@
             android:layout_below="@+id/dbWhen_Pain"
             android:layout_toRightOf="@+id/txt_When_Pain_start"
             android:gravity="center"
+            android:textSize="17sp"
+
             app:drawableTint="#700C2E" />
 
 
@@ -138,6 +146,8 @@
             android:layout_below="@+id/dbWhen_Pain_start"
             android:layout_toRightOf="@+id/txt_When_Pain_start"
             android:gravity="center"
+            android:textSize="17sp"
+
             app:drawableTint="#700C2E" />
 
         <Button
@@ -155,7 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_below="@+id/btn_del_Pain"
-            android:background="@color/design_default_color_primary" />
+            android:background="@color/purple_700" />
 
 
 

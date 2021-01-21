@@ -30,6 +30,8 @@
             android:layout_toRightOf="@+id/txtFelt_what"
             android:id="@+id/dbFeltWhat"
             android:gravity="center"
+            android:textSize="17sp"
+
 
             />
 
@@ -52,6 +54,8 @@
             android:layout_below="@+id/dbFeltWhat"
             android:gravity="center"
             android:layout_toRightOf="@+id/txtFelt_scale"
+            android:textSize="20sp"
+
             app:drawableTint="#700C2E" />
 
 
@@ -74,6 +78,7 @@
             android:layout_marginLeft="-1dp"
             android:gravity="center"
             android:layout_marginTop="-1dp"
+            android:textSize="17sp"
             android:layout_toRightOf="@+id/txtFeltabout"
             app:drawableTint="#700C2E" />
 
@@ -95,6 +100,7 @@
             android:layout_below="@+id/dbFeltAbout"
             android:layout_toRightOf="@+id/txt_dbFeltDate"
             android:gravity="center"
+            android:textSize="20sp"
             app:drawableTint="#700C2E" />
 
 
@@ -115,7 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_below="@+id/btn_del_felt"
-            android:background="@color/design_default_color_primary" />
+            android:background="@color/purple_700" />
 
 
 
