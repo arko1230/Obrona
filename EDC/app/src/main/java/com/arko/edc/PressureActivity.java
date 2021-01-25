@@ -70,7 +70,7 @@ public class PressureActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull FirebaseViewPressureHolder holder, int position, @NonNull DataSetFirePress model) {
                 holder.pressResult.setText(model.getPressResult());
-                holder.pulsResult.setText(model.getPressResult());
+                holder.pulsResult.setText(model.getPulsResult());
                 holder.aboutPressure.setText(model.getAboutPressure());
                 holder.date.setText(model.getDate());
 

@@ -63,6 +63,18 @@
             android:padding="3dp"
             />
 
+        <Button
+            android:id="@+id/btn_del_sugar"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/sugarResult"
+            android:text="USUN WPIS"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:backgroundTint="#F44336" />
+
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -90,16 +102,6 @@
             android:gravity="center"
             />
 
-        <Button
-            android:id="@+id/btn_del_sugar"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/aboutSugar"
-            android:text="USUN"
-            android:layout_centerInParent="true"
-            android:padding="5dp"
-            android:layout_margin="5dp"
-            app:backgroundTint="#F44336" />
 
 
 

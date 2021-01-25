@@ -94,7 +94,7 @@
         <Button
             android:id="@+id/btn_datepicker"
             android:layout_below="@+id/txt_aboutdate_measure"
-            android:text="Data"
+            android:text="Wybierz Date"
             android:layout_width="match_parent"
             android:layout_marginHorizontal="80dp"
             android:layout_height="50dp"

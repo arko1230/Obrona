@@ -68,18 +68,21 @@ public class PainActivity extends AppCompatActivity {
         mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Pain");
         mDatabaseReference.keepSynced(true);
 
-        mOptions = new FirebaseRecyclerOptions.Builder<DataSetFirePain>().setQuery(mDatabaseReference, DataSetFirePain.class).build();
 
+        mOptions = new FirebaseRecyclerOptions.Builder<DataSetFirePain>()
+                .setQuery(mDatabaseReference, DataSetFirePain.class).build();
 
         mAdapter = new FirebaseRecyclerAdapter<DataSetFirePain, FirebaseViewPainHolder>(mOptions) {
             @Override
-            protected void onBindViewHolder(@NonNull FirebaseViewPainHolder holder, int position, @NonNull DataSetFirePain model) {
+            protected void onBindViewHolder(@NonNull FirebaseViewPainHolder holder,
+                                            int position, @NonNull DataSetFirePain model) {
                 holder.PainPlace.setText(model.getPainPlace());
                 holder.Pain_leve.setText(model.getPain_leve());
                 holder.Pain_metod.setText(model.getPain_metod());
                 holder.When_Pain.setText(model.getWhen_Pain());
                 holder.When_Pain_start.setText(model.getWhen_Pain_start());
                 holder.When_Pain_end.setText(model.getWhen_Pain_end());
+
 
                 holder.btn_del_Pain.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -91,7 +94,8 @@ public class PainActivity extends AppCompatActivity {
                         builder.setPositiveButton("TAK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("Pain").child(getRef(position).getKey()).removeValue();
+                            FirebaseDatabase.getInstance().getReference().child("Users")
+                                .child(uid).child("Pain").child(getRef(position).getKey()).removeValue();
                             }
                         });
 

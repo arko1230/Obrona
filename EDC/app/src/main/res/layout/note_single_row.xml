@@ -41,7 +41,7 @@
             android:id="@+id/txtAboutNote"
             android:layout_below="@+id/txtNoteTitle"
             android:background="@color/cardview_shadow_start_color"
-            android:text="Opis"
+            android:text="Treść"
             android:textStyle="bold"
             android:gravity="center"
             />

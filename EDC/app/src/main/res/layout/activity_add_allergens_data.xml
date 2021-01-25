@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txt_AllergenFactor"
             android:textSize="20sp"
-            android:text="Czynnik alergiczny?"
+            android:text="Czynnik alergiczny"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
 

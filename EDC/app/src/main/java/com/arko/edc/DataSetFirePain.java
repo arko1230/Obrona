@@ -55,7 +55,8 @@ public class DataSetFirePain {
     public DataSetFirePain() {
     }
 
-    public DataSetFirePain(String painPlace, String pain_leve, String pain_metod, String when_Pain, String when_Pain_start, String when_Pain_end) {
+    public DataSetFirePain(String painPlace, String pain_leve, String pain_metod,
+                           String when_Pain, String when_Pain_start, String when_Pain_end) {
         PainPlace = painPlace;
         Pain_leve = pain_leve;
         Pain_metod = pain_metod;

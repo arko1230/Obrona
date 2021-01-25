@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtresult"
-            android:text="Pomiar w stopniach celcjusza"
+            android:text="Wynik pomiaru w °C"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
@@ -71,6 +71,7 @@
             android:layout_marginTop="40dp"
             android:layout_alignParentTop="true"
             android:layout_marginHorizontal="30dp"
+            android:hint="Np. Termometr bezdotykowy, pomiar czoła"
             android:gravity="center"
             />
 

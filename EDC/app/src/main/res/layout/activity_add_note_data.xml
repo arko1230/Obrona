@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/temp_about"
             android:textSize="25sp"
-            android:text="@string/about"
+            android:text="Treść"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="25dp"
             android:layout_centerHorizontal="true"
@@ -93,7 +93,7 @@
             android:layout_marginTop="8dp"
             android:textSize="25sp"
             android:layout_marginBottom="10dp"
-            android:text="Wybierz date pomiaru" />
+            android:text="Wybierz date notatki" />
 
         <Button
             android:id="@+id/btn_datepicker_note"

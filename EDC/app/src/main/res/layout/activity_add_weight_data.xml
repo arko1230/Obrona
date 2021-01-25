@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtresult"
-            android:text="Wynik pomiaru w kg"
+            android:text="Wynik pomiaru w Kg"
             android:textSize="25sp"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
@@ -101,7 +101,7 @@
             android:layout_below="@+id/txt_aboutdate_measure"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="Data"
+            android:text="WYBIERZ DATĘ"
 
             />
 

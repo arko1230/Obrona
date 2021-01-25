@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtBloodAbout"
-            android:text="Wpisz swoją grupe krwi"
+            android:text="Grupa krwi"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="10dp"
             android:textSize="25sp"
@@ -88,7 +88,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
             android:textSize="25sp"
-            android:text="Wpisz date swojego urodzenia lub wiek" />
+            android:text="Wiek lub data urodzenia" />
 
         <EditText
             android:layout_width="match_parent"
@@ -110,7 +110,7 @@
             android:layout_marginTop="25dp"
             android:textSize="25sp"
 
-            android:text="Wpisz swoją płeć" />
+            android:text="Płeć" />
 
         <EditText
             android:layout_width="160dp"

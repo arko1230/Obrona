@@ -36,7 +36,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:id="@+id/btnFamily_diseases"
-                    android:text="Przewlekłe w rodzinie"
+                    android:text="GENETYCZNE w rodzinie"
                     android:layout_marginTop="20dp"
                     />
 

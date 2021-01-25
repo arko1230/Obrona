@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtDiseaseName"
             android:textSize="20sp"
-            android:text="Nazwa leku"
+            android:text="Nazwa"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:layout_alignParentTop="true"
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txt_dayPart_takeDrug"
             android:textSize="20sp"
-            android:text="Pora dnia?"
+            android:text="Pora dnia"
             android:layout_marginBottom="5dp"
             android:layout_centerHorizontal="true"
 
@@ -174,7 +174,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="Czas zażywania"
+            android:text="Okres zażywania"
             android:textSize="20sp" />
 
         <EditText

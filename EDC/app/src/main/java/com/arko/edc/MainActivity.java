@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
 
         setContentView(R.layout.activity_main);
         initWidgets();
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         txtUserEmail.setText(account.getEmail());
-       Glide.with(this).load(account.getPhotoUrl()).into(imgLogUser);
+        Glide.with(this).load(account.getPhotoUrl()).into(imgLogUser);
 
 
     }
